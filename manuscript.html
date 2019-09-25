@@ -13345,109 +13345,6 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">DatabaseError</span>                             Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-202-0b0e361c6465&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     17</span> 
-<span class="ansi-green-intense-fg ansi-bold">     18</span> &#34;&#34;&#34;
-<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg"> </span>data_usage_by_age_months_no_color_full_year <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>read_sql_query<span class="ansi-blue-fg">(</span>q<span class="ansi-blue-fg">,</span> redshift_engine<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pandas/io/sql.pyc</span> in <span class="ansi-cyan-fg">read_sql_query</span><span class="ansi-blue-fg">(sql, con, index_col, coerce_float, params, parse_dates, chunksize)</span>
-<span class="ansi-green-intense-fg ansi-bold">    312</span>     return pandas_sql.read_query(
-<span class="ansi-green-intense-fg ansi-bold">    313</span>         sql<span class="ansi-blue-fg">,</span> index_col<span class="ansi-blue-fg">=</span>index_col<span class="ansi-blue-fg">,</span> params<span class="ansi-blue-fg">=</span>params<span class="ansi-blue-fg">,</span> coerce_float<span class="ansi-blue-fg">=</span>coerce_float<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 314</span><span class="ansi-red-fg">         parse_dates=parse_dates, chunksize=chunksize)
-</span><span class="ansi-green-intense-fg ansi-bold">    315</span> 
-<span class="ansi-green-intense-fg ansi-bold">    316</span> 
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pandas/io/sql.pyc</span> in <span class="ansi-cyan-fg">read_query</span><span class="ansi-blue-fg">(self, sql, index_col, coerce_float, parse_dates, params, chunksize)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1097</span>         args <span class="ansi-blue-fg">=</span> _convert_params<span class="ansi-blue-fg">(</span>sql<span class="ansi-blue-fg">,</span> params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1098</span> 
-<span class="ansi-green-fg">-&gt; 1099</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>execute<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1100</span>         columns <span class="ansi-blue-fg">=</span> result<span class="ansi-blue-fg">.</span>keys<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1101</span> 
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pandas/io/sql.pyc</span> in <span class="ansi-cyan-fg">execute</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    988</span>     <span class="ansi-green-fg">def</span> execute<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    989</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Simple passthrough to SQLAlchemy connectable&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 990</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>connectable<span class="ansi-blue-fg">.</span>execute<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    991</span> 
-<span class="ansi-green-intense-fg ansi-bold">    992</span>     def read_table(self, table_name, index_col=None, coerce_float=True,
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/base.pyc</span> in <span class="ansi-cyan-fg">execute</span><span class="ansi-blue-fg">(self, statement, *multiparams, **params)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2073</span> 
-<span class="ansi-green-intense-fg ansi-bold">   2074</span>         connection <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>contextual_connect<span class="ansi-blue-fg">(</span>close_with_result<span class="ansi-blue-fg">=</span>True<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 2075</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> connection<span class="ansi-blue-fg">.</span>execute<span class="ansi-blue-fg">(</span>statement<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>multiparams<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2076</span> 
-<span class="ansi-green-intense-fg ansi-bold">   2077</span>     <span class="ansi-green-fg">def</span> scalar<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> statement<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>multiparams<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>params<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/base.pyc</span> in <span class="ansi-cyan-fg">execute</span><span class="ansi-blue-fg">(self, object, *multiparams, **params)</span>
-<span class="ansi-green-intense-fg ansi-bold">    940</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    941</span>         <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>object<span class="ansi-blue-fg">,</span> util<span class="ansi-blue-fg">.</span>string_types<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 942</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_execute_text<span class="ansi-blue-fg">(</span>object<span class="ansi-blue-fg">,</span> multiparams<span class="ansi-blue-fg">,</span> params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    943</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    944</span>             meth <span class="ansi-blue-fg">=</span> object<span class="ansi-blue-fg">.</span>_execute_on_connection
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/base.pyc</span> in <span class="ansi-cyan-fg">_execute_text</span><span class="ansi-blue-fg">(self, statement, multiparams, params)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1102</span>             statement<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1103</span>             parameters<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1104</span><span class="ansi-red-fg">             </span>statement<span class="ansi-blue-fg">,</span> parameters
-<span class="ansi-green-intense-fg ansi-bold">   1105</span>         )
-<span class="ansi-green-intense-fg ansi-bold">   1106</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_has_events <span class="ansi-green-fg">or</span> self<span class="ansi-blue-fg">.</span>engine<span class="ansi-blue-fg">.</span>_has_events<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/base.pyc</span> in <span class="ansi-cyan-fg">_execute_context</span><span class="ansi-blue-fg">(self, dialect, constructor, statement, parameters, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1198</span>                 parameters<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1199</span>                 cursor<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1200</span><span class="ansi-red-fg">                 context)
-</span><span class="ansi-green-intense-fg ansi-bold">   1201</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1202</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_has_events <span class="ansi-green-fg">or</span> self<span class="ansi-blue-fg">.</span>engine<span class="ansi-blue-fg">.</span>_has_events<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/base.pyc</span> in <span class="ansi-cyan-fg">_handle_dbapi_exception</span><span class="ansi-blue-fg">(self, e, statement, parameters, cursor, context)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1411</span>                 util.raise_from_cause(
-<span class="ansi-green-intense-fg ansi-bold">   1412</span>                     sqlalchemy_exception<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1413</span><span class="ansi-red-fg">                     </span>exc_info
-<span class="ansi-green-intense-fg ansi-bold">   1414</span>                 )
-<span class="ansi-green-intense-fg ansi-bold">   1415</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/util/compat.pyc</span> in <span class="ansi-cyan-fg">raise_from_cause</span><span class="ansi-blue-fg">(exception, exc_info)</span>
-<span class="ansi-green-intense-fg ansi-bold">    201</span>     exc_type<span class="ansi-blue-fg">,</span> exc_value<span class="ansi-blue-fg">,</span> exc_tb <span class="ansi-blue-fg">=</span> exc_info
-<span class="ansi-green-intense-fg ansi-bold">    202</span>     cause <span class="ansi-blue-fg">=</span> exc_value <span class="ansi-green-fg">if</span> exc_value <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> exception <span class="ansi-green-fg">else</span> None
-<span class="ansi-green-fg">--&gt; 203</span><span class="ansi-red-fg">     </span>reraise<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">(</span>exception<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> exception<span class="ansi-blue-fg">,</span> tb<span class="ansi-blue-fg">=</span>exc_tb<span class="ansi-blue-fg">,</span> cause<span class="ansi-blue-fg">=</span>cause<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    204</span> 
-<span class="ansi-green-intense-fg ansi-bold">    205</span> <span class="ansi-green-fg">if</span> py3k<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/base.pyc</span> in <span class="ansi-cyan-fg">_execute_context</span><span class="ansi-blue-fg">(self, dialect, constructor, statement, parameters, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1191</span>                         statement<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>                         parameters<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1193</span><span class="ansi-red-fg">                         context)
-</span><span class="ansi-green-intense-fg ansi-bold">   1194</span>         <span class="ansi-green-fg">except</span> BaseException <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>             self._handle_dbapi_exception(
-
-<span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sqlalchemy/engine/default.pyc</span> in <span class="ansi-cyan-fg">do_execute</span><span class="ansi-blue-fg">(self, cursor, statement, parameters, context)</span>
-<span class="ansi-green-intense-fg ansi-bold">    505</span> 
-<span class="ansi-green-intense-fg ansi-bold">    506</span>     <span class="ansi-green-fg">def</span> do_execute<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> cursor<span class="ansi-blue-fg">,</span> statement<span class="ansi-blue-fg">,</span> parameters<span class="ansi-blue-fg">,</span> context<span class="ansi-blue-fg">=</span>None<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 507</span><span class="ansi-red-fg">         </span>cursor<span class="ansi-blue-fg">.</span>execute<span class="ansi-blue-fg">(</span>statement<span class="ansi-blue-fg">,</span> parameters<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    508</span> 
-<span class="ansi-green-intense-fg ansi-bold">    509</span>     <span class="ansi-green-fg">def</span> do_execute_no_params<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> cursor<span class="ansi-blue-fg">,</span> statement<span class="ansi-blue-fg">,</span> context<span class="ansi-blue-fg">=</span>None<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">DatabaseError</span>: (psycopg2.DatabaseError) SSL SYSCALL error: Operation timed out
- [SQL: &#34;\nselect datediff(&#39;days&#39;, published_date::timestamp, received_at_raw::timestamp)/30 as article_age_months, \ncount(u.doi) as num_accesses \nfrom papertrail_unpaywall_extracted extracted \njoin unpaywall u on extracted.doi=u.doi \nwhere genre = &#39;journal-article&#39; and journal_issn_l != &#39;0931-7597&#39;\nand published_date &gt; &#39;1950-01-01&#39;::timestamp\n-- and published_date &lt; current_date\n-- and received_at_raw &gt; &#39;2019-07-15&#39;\n-- and last_changed_date &lt; &#39;2019-07-01&#39;::timestamp\nand extracted.doi not in (&#39;10.1038/nature21360&#39;, &#39;10.1038/nature11723&#39;)\ngroup by article_age_months\norder by article_age_months asc\n\n&#34;] (Background on this error at: http://sqlalche.me/e/4xp6)</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -13498,8 +13395,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13532,8 +13428,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13590,8 +13485,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13604,8 +13498,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13618,8 +13511,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13652,8 +13544,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13750,8 +13641,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13764,8 +13654,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13778,8 +13667,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13802,8 +13690,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13859,8 +13746,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13908,8 +13794,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13940,8 +13825,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -13973,8 +13857,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14017,8 +13900,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14056,8 +13938,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14088,8 +13969,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14120,8 +14000,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14152,8 +14031,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14187,8 +14065,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14222,8 +14099,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
@@ -14271,13 +14147,60 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt"> </div>
 
+
+<div class="output_html rendered_html output_subarea ">
+<div id="figure-more-colors"></div>
+    <script>
+    var key = "figure-more-colors"
+    $("div").each(function(i){
+        if (this.id === key){
+            this.innerHTML = '<a name="' + key + '"></a>';
+        }
+    });
+    </script>
+    
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"> </div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure 5: This has many colors
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#figure-pretty-one">Figure 3</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"> </div>
 
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_90_0.png"
+<img src="manuscript_files/manuscript_92_0.png"
 >
 </div>
 
@@ -14303,13 +14226,12 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_92_0.png"
+<img src="manuscript_files/manuscript_94_0.png"
 >
 </div>
 
@@ -14335,13 +14257,12 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_94_0.png"
+<img src="manuscript_files/manuscript_96_0.png"
 >
 </div>
 
@@ -14367,13 +14288,12 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    <div class="prompt"> </div>
 
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_96_0.png"
+<img src="manuscript_files/manuscript_98_0.png"
 >
 </div>
 
@@ -14412,6 +14332,7 @@ $( document ).ready(function(){
 <li>plan S </li>
 <li>change in embargo for existing mandates</li>
 <li>increase in institutional self archiving</li>
+<li>large scale read and publish agreements</li>
 </ul>
 </li>
 <li>more refined models<ul>
@@ -14508,8 +14429,7 @@ then can be viewed at
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Funding">Funding<a class="anchor-link" href="#Funding">&#182;</a></h2><p>The authors received no funding for this study.</p>
-
+<h2 id="Funding">Funding<a class="anchor-link" href="#Funding">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14524,12 +14444,60 @@ then can be viewed at
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt"> </div>
 
+
+<div class="output_html rendered_html output_subarea ">
+<div id="figure-pretty-one"></div>
+    <script>
+    var key = "figure-pretty-one"
+    $("div").each(function(i){
+        if (this.id === key){
+            this.innerHTML = '<a name="' + key + '"></a>';
+        }
+    });
+    </script>
+    
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"> </div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Figure 1
-Figure 2
+<pre>Figure 3: A figure that is pretty
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"> </div>
+
+
+<div class="output_html rendered_html output_subarea ">
+<div id="figure-has-colors"></div>
+    <script>
+    var key = "figure-has-colors"
+    $("div").each(function(i){
+        if (this.id === key){
+            this.innerHTML = '<a name="' + key + '"></a>';
+        }
+    });
+    </script>
+    
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"> </div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure 4: This has many colors
 </pre>
 </div>
 </div>
@@ -14541,216 +14509,10 @@ Figure 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here I am talking about Figure 2 and here I'm talking about Figure 1</p>
+<p>Here I am talking about Figure 4 and here I'm talking about Figure 3</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="Figure"></div> 
-    <script>
-    var fignb = 1;
-    var key = "Figure"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '-' + fignb.toString() + '"></a>' +
-                             '<a class="anchor" href="#' + key + '-' + fignb.toString() +'"><b><i>' + key.charAt(0).toUpperCase() + key.slice(1) + ' ' + fignb.toString() + '</i></b></a>';
-            fignb += 1;
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="Figure"></div> This is a nice Figure.
-    <script>
-    var fignb = 1;
-    var key = "Figure"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '-' + fignb.toString() + '"></a>' +
-                             '<a class="anchor" href="#' + key + '-' + fignb.toString() +'"><b><i>' + key.charAt(0).toUpperCase() + key.slice(1) + ' ' + fignb.toString() + '</i></b></a>';
-            fignb += 1;
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="Figure"></div> 
-    <script>
-    var fignb = 1;
-    var key = "Figure"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '-' + fignb.toString() + '"></a>' +
-                             '<a class="anchor" href="#' + key + '-' + fignb.toString() +'"><b><i>' + key.charAt(0).toUpperCase() + key.slice(1) + ' ' + fignb.toString() + '</i></b></a>';
-            fignb += 1;
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hi Heather
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="Figure"></div> This is a different figure
-    <script>
-    var fignb = 1;
-    var key = "Figure"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '-' + fignb.toString() + '"></a>' +
-                             '<a class="anchor" href="#' + key + '-' + fignb.toString() +'"><b><i>' + key.charAt(0).toUpperCase() + key.slice(1) + ' ' + fignb.toString() + '</i></b></a>';
-            fignb += 1;
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="Figure"></div> 
-    <script>
-    var fignb = 1;
-    var key = "Figure"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '-' + fignb.toString() + '"></a>' +
-                             '<a class="anchor" href="#' + key + '-' + fignb.toString() +'"><b><i>' + key.charAt(0).toUpperCase() + key.slice(1) + ' ' + fignb.toString() + '</i></b></a>';
-            fignb += 1;
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="Figure"></div> 3
-    <script>
-    var fignb = 1;
-    var key = "Figure"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '-' + fignb.toString() + '"></a>' +
-                             '<a class="anchor" href="#' + key + '-' + fignb.toString() +'"><b><i>' + key.charAt(0).toUpperCase() + key.slice(1) + ' ' + fignb.toString() + '</i></b></a>';
-            fignb += 1;
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>None None
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
