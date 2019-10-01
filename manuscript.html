@@ -13216,8 +13216,14 @@ $( document ).ready(function(){
 </ul>
 <h3 id="Article-views:-access-logs-of-the-Unpaywall-web-browser-extension">Article views: access logs of the Unpaywall web browser extension<a class="anchor-link" href="#Article-views:-access-logs-of-the-Unpaywall-web-browser-extension">&#182;</a></h3><p>Predicting the open access pattern of usage requests requires knowing the relative usage demands of papers based on their age and subject matter. This study has extracted these pageview patterns from the usage logs of the <a href="https://unpaywall.org/products/extension">Unpaywall browser extension</a> for Chrome and Firefox.</p>
 <p>This extension is an open-source tool made by the same non-profit as the Unpaywall dataset described above, with the goal of helping people conveniently find free copies of research papers directly from their web browser. The extension has more than 200,000 active users and has received more than 50 million access requests between August 2018 and August 2019. Because readership data is private and potentially sensitive, we are not releasing the Unpaywall usage logs along with the other datasets behind this paper.</p>
-<p>[add more about strengths and weaknesses of this data. make a case for why it's representative. add the IP address graphs.]</p>
-<p>[add more descriptive stats: num events, num journals, num countries, etc.]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>TODO: add more about strengths and weaknesses of this data. make a case for why it's representative. add the IP address graphs.  num events, num journals, num countries, etc.</em></p>
 
 </div>
 </div>
@@ -13230,10 +13236,17 @@ $( document ).ready(function(){
 <li>Growth in OA articles</li>
 <li>Growth in OA article views</li>
 </ol>
-<h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><p>First, we model the growth of OA articles using a very simple approach: (1) categorize previously-published articles by OA type, then for each group (2) plot the count of articles by publication year, and (3) extrapolate the curves into the future.  Combining these curves together give us the predicted relative growth in articles by OA type.  There is one additional detail to take into account: because embargoes (delays between the time an article is published and the time it is made open access) cause Green and Bronze OA to be underrepresented in recent years, we base the extrapolation on articles whose embargos have largely expired (articles more than 2 years old).  This approach and its results are described in Section 4.2.</p>
-<p>Second, we predict the growth in OA articles <em>by date of observation</em>, rather than by publication date.  This is a slightly more difficult model than our first, and requires us to calculate the OA lag between publication and availability for different types of OA.  Once we have the pattern of OA availability by year, we forecast the OA availability of future years by assuming that it will have the same overall pattern as previous years -- the papers that will be made available next year will have the same age distribution as the papers that were made available last year.  We do allow the absolute number of papers to increase year-over-year: we estimate the future growth multiplier by extrapolating the height of past availability curves.  This analysis is presented in Section 4.3.</p>
+<h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><p>To start, we display the growth of OA articles heretofore using a very simple approach: categorize previously-published articles by OA type, then for each group plot the count of articles by publication year.  Combining these curves together give us relative growth in articles by OA type, by year of publication.  This approach and its results are described in Section 4.2.</p>
+<p>Next, we examine the growth in OA articles <em>by date of observation</em>, rather than by date of publication.  This is a more difficult analysis than the first, and requires us to calculate the OA lag between publication and availability for different types of OA.  Once we have the pattern of OA availability by year, we forecast the OA availability of future years by assuming that it will have the same overall pattern as previous years -- the papers that will be made available next year will have the same age distribution as the papers that were made available last year.  We do allow the absolute number of papers to increase year-over-year: we estimate the future growth multiplier by extrapolating the height of past availability curves.  This analysis is presented in Section 4.3.</p>
 <p>Third, we turn to predicting the growth of OA article views -- what proportion of what is read is available OA, and how will this change in the future?  The Unpaywall browser extension logs give us a baseline of what is read right now.  By assuming that reading patterns remain relatively unchanged over time (specifically the probability that a reader wants to read a paper given its age and OA type), we use the estimates we made in Section 4.3 to calculate the relative number of views by OA type in the past and the future.  This is described in Section 4.4 and Supplementary Information.</p>
-<p>Finally, we look at the impact of including a disruptive change into our models, in this case the growth of Biorxiv.  Analysis and results are in Section 4.5.</p>
+<p>Finally, we look at the impact of including a disruptive change into our models, in this case the growth of bioRxiv.  Analysis and results are in Section 4.5.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Glossary">Glossary<a class="anchor-link" href="#Glossary">&#182;</a></h3><p>In addition to the OA types defined in <a href="#section-oa-vocab">Section 2</a>, we define additional terms as we use them in this paper, in approximate order they are discussed:</p>
 <ul>
 <li><strong>Date of publication</strong>: the date an article is published in a journal</li>
@@ -13298,23 +13311,8 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>%cache magic is now registered in ipython
-</pre>
 </div>
-</div>
-
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -13383,6 +13381,19 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Code:-SQL">Code: SQL<a class="anchor-link" href="#Code:-SQL">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13429,7 +13440,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Predicting-number-of-articles-by-OA-type,-by-date-of-publication">Predicting number of articles by OA type, by date of publication<a class="anchor-link" href="#Predicting-number-of-articles-by-OA-type,-by-date-of-publication">&#182;</a></h3>
+<h3 id="Number-of-articles-by-OA-type,-by-date-of-publication">Number of articles by OA type, by date of publication<a class="anchor-link" href="#Number-of-articles-by-OA-type,-by-date-of-publication">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13446,9 +13457,9 @@ $( document ).ready(function(){
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="figure-simple-extrap-linear"></div>
+<div id="figure-articles_by_simple_colors"></div>
     <script>
-    var key = "figure-simple-extrap-linear"
+    var key = "figure-articles_by_simple_colors"
     $("div").each(function(i){
         if (this.id === key){
             this.innerHTML = '<a name="' + key + '"></a>';
@@ -13467,8 +13478,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We model the growth of OA articles using a simple extrapolation based on articles published at least 2 years ago -- 2 years is long enough to exclude most articles whose OA type may change due to OA lag (empirical evidence supporting this threshold follows in <a href="#section-4-3">Section 4.3</a>).</p>
-<p>We graph these articles by OA type and date of publication in {{ print figure_link("simple-extrap-linear") }} and {{ print figure_link("simple-extrap-exp") }}.  Extrapolation (using the <code>scipy.interpolate.interp1d()</code> function) is used to predict the number of publications in future years, with linear extrapolation used in {{ print figure_link("simple-extrap-linear") }} and exponential extrapolation used in {{ print figure_link("simple-extrap-exp") }}.</p>
+<p>The number and proportion of articles by OA type, by publication year, is shown in {{ print figure_link("articles_by_simple_colors") }}.</p>
 
 </div>
 </div>
@@ -13487,7 +13497,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_46_0.png"
+<img src="manuscript_files/manuscript_52_0.png"
 >
 </div>
 
@@ -13500,7 +13510,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>{{print figure_link("simple-extrap-linear")}}: Predicted number of articles by year of publication, linear extrapolation</strong></p>
+<p><strong>{{print figure_link("articles_by_simple_colors")}}: Articles by OA type, by year of publication. OA type as of October 2019.</strong></p>
 
 </div>
 </div>
@@ -13518,93 +13528,9 @@ $( document ).ready(function(){
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="figure-simple-extrap-exp"></div>
+<div id="figure-articles_by_simple_colors_zoom"></div>
     <script>
-    var key = "figure-simple-extrap-exp"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_49_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>{{print figure_link("simple-extrap-exp")}}: Predicted number of articles by year of publication, exponential extrapolation</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-simple-stacked-linear"></div>
-    <script>
-    var key = "figure-simple-stacked-linear"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-simple-stacked-exp"></div>
-    <script>
-    var key = "figure-simple-stacked-exp"
+    var key = "figure-articles_by_simple_colors_zoom"
     $("div").each(function(i){
         if (this.id === key){
             this.innerHTML = '<a name="' + key + '"></a>';
@@ -13623,8 +13549,8 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The linear and exponential extrapolations result in similar predictions for the growth of Green OA, Bronze OA, and Closed articles through 2024.  The exponential extrapolation suggests much more aggressive growth of Gold and Hybrid OA.</p>
-<p>The growth in OA papers is predicted to be faster than the growth of Closed papers using both extrapolation methods, though relative growth of OA is predicted to be slower using linear extrapolation ({{print figure_link("simple-stacked-linear") }}) than exponential extrapolation ({{print figure_link("simple-stacked-exp") }}).</p>
+<p>The early years of {{ print figure_link("articles_by_simple_colors") }} is similar to Figure 2 in Piwowar et al. (2018), with one notable difference: some of what was considered Bronze OA (and to a lesser extent hybrid OA) in Piwowar et al. (2018) is classified as Gold OA in the current analysis. This is due to an improvement in Unpaywall's algorithms. Originally, Unpaywall used the Directory of Open Access Journals (DOAJ) as the sole arbiter of whether a journal was "fully-OA." Unpaywall still uses DOAJ in this way, but it now also adds an empirical check for OA journals (if 100% of a journal's articles are OA, it is listed as an OA journal). This results in a more comprehensive and accurate list of fully-OA journals, which in turn moves some articles into Gold from Hybrid and Bronze.</p>
+<p>We notice an overall publication drop in the last year of {{ print figure_link("articles_by_simple_colors") }}.  This is because the graph does not include a full publication year for 2019 (this analysis was last run on {{print datetime.datetime.now().isoformat()[0:10]}}).  We can also see a visible decrease in the proportion of OA (particularly Green) in the most recent publication years.  The close-up in {{ print figure_link("articles_by_simple_colors_zoom") }} makes this even more clear.  This change in OA proportions is because many articles pubished in 2018 are still under embargo at the time of this analysis (September 2019), so they are considered "Closed" in this graph even though they may ultimately become Green OA or Bronze OA.  More on this in <a href="#section-4-3">Section 4.3</a>.</p>
 
 </div>
 </div>
@@ -13643,7 +13569,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_53_0.png"
+<img src="manuscript_files/manuscript_56_0.png"
 >
 </div>
 
@@ -13656,7 +13582,46 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>{{print figure_link("simple-stacked-linear")}}: Papers by year of publication, linear extrapolation</strong></p>
+<p><strong>{{print figure_link("articles_by_simple_colors_zoom")}}: Articles by OA type, by the last five years of publication. OA type as of October 2019.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div id="figure-articles_by_simple_colors_cumulative"></div>
+    <script>
+    var key = "figure-articles_by_simple_colors_cumulative"
+    $("div").each(function(i){
+        if (this.id === key){
+            this.innerHTML = '<a name="' + key + '"></a>';
+        }
+    });
+    </script>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A cumulative view of {{ print figure_link("articles_by_simple_colors") }} is shown in {{ print figure_link("articles_by_simple_colors_cumulative") }}.</p>
 
 </div>
 </div>
@@ -13675,7 +13640,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_55_0.png"
+<img src="manuscript_files/manuscript_60_0.png"
 >
 </div>
 
@@ -13688,15 +13653,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>{{print figure_link("simple-stacked-exp")}}: Papers by year of publication, exponential extrapolation</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The early years of {{ print figure_link("simple-stacked-linear") }} and  {{ print figure_link("simple-stacked-exp") }} are similar to Figure 2 in Piwowar et al. (2018). There is one noteable difference: some of what was considered Bronze OA (and to a lesser extent hybrid OA) in Piwowar et al. (2018) is classified as Gold OA in the current analysis. This is due to an improvement in Unpaywall's algorithms. Originally, Unpaywall used the Directory of Open Access Journals (DOAJ) as the sole arbiter of whether a journal was "fully-OA." Unpaywall still uses DOAJ in this way, but it now also adds an empirical check for OA journals (if 100% of a journal's articles are OA, it is listed as an OA journal). This results in a more comprehensive and accurate list of fully-OA journals, which in turn moves some articles into Gold from Hybrid and Bronze.</p>
+<p><strong>{{print figure_link("articles_by_simple_colors_cumulative")}}: Cumulative articles by OA type, by year of publication. OA type as of October 2019.</strong></p>
 
 </div>
 </div>
@@ -13712,9 +13669,27 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The simple analysis above tells us how OA type varies by publication date. However, it glosses over a detail that becomes important when we endeavor to make OA prediction useful: <em>when</em> are papers actually available OA?</p>
-<p>For Gold OA and Hybrid OA the answer is easy: the papers are OA at the time of publication. For Green and Bronze OA the answer is more complicated. Authors often self-archive (upload their paper to a repository) months or years after the official publication date of the paper, typically  because the journal has a policy that authors must wait a certain length of time (the "embargo period") before self-archiving. Funder policies that mandate Green OA often allow a delay between publication and availability (notably the National Institutes of Health in the USA, accounting for most of the content in the large PMC repository). Finally, some journals open up their back catalogs once articles reach a certain age, which has been called "delayed OA" (Laakso and Björk, 2013) and we consider an important subset of Bronze.</p>
-<p><strong>USE THIS?  Second, we predict the growth in OA articles <em>by date of availability</em>, rather than by publication date.  This is a slightly more difficult model than our first, and requires us to calculate the lag between publication and availability for different types of OA.  Once we have the pattern of OA availability by year, we forecast the OA availability of future years by assuming that it will have the same pattern as previous years -- the papers that will be made available next year will have the same age distribution as the papers that were made available last year.  We do allow the absolute number of papers to increase year-over-year.  We estimate the future growth multiplier by extrapolating the height of past availability curves.  This analysis is presented in Section 4.3.</strong></p>
+<h4 id="Date-of-publication-vs.-Date-of-observation">Date of publication vs. Date of observation<a class="anchor-link" href="#Date-of-publication-vs.-Date-of-observation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To predict the growth of OA in future years, we might be tempted to simply extrapolate the growth of OA types in {{ print figure_link("articles_by_simple_colors") }} or {{ print figure_link("articles_by_simple_colors_cumulative") }}, perhaps excluding recent publications to avoid the affect of embargos shown in {{ print figure_link("articles_by_simple_colors_zoom") }}.</p>
+<p>The downside of this simple extrapolation approach is that it only gives us OA type <em>by date of publication</em>.  As {{ print figure_link("articles_by_simple_colors_zoom") }} suggests, the impact of embargos is significant, and means that understanding OA by date of publication isn't very useful.  What we really want is OA by <em>year of observation</em>.</p>
+<p>We show the difference in these by a few diagrams:<br>
+            <code>insert diagrams here</code></p>
+<p>We'll compute OA by year of observation by first understanding OA lag by OA type, then extrapolating OA growth from there.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="OA-lag">OA lag<a class="anchor-link" href="#OA-lag">&#182;</a></h4><p>For Gold OA and Hybrid OA understanding OA lag is easy -- there is no lag: papers are OA at the time of publication.</p>
+<p>For Green and Bronze OA the lag is more complicated. Authors often self-archive (upload their paper to a repository) months or years after the official publication date of the paper, typically  because the journal has a policy that authors must wait a certain length of time (the "embargo period") before self-archiving. Funder policies that mandate Green OA often allow a delay between publication and availability (notably the National Institutes of Health in the USA, accounting for most of the content in the large PMC repository). Finally, some journals open up their back catalogs once articles reach a certain age, which has been called "delayed OA" (Laakso and Björk, 2013) and we consider an important subset of Bronze.</p>
 <p>We explore and model these dynamics below.</p>
 
 </div>
@@ -13727,10 +13702,42 @@ $( document ).ready(function(){
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div id="figure-oa_lag_green"></div>
+    <script>
+    var key = "figure-oa_lag_green"
+    $("div").each(function(i){
+        if (this.id === key){
+            this.innerHTML = '<a name="' + key + '"></a>';
+        }
+    });
+    </script>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can explore the delay between the time an article is published and when it becomes available as Green OA by comparing publication dates with dates of repository availability, available from each article's OAI-PMH record (as harvested by Unpaywall).</p>
+<p>The age of an article when it available as Green OA can be derived from the date it was published in a repository, which we can get from its matched <a href="https://www.openarchives.org/pmh/">OAI-PMH records</a> (as harvested by Unpaywall).</p>
+<p>{{ print figure_link("oa_lag_green") }} shows Green OA articles by date first made OA.  Articles first made OA in 2015 are shown in the first row, 2016 the second row, and so on.  Articles in each row are displayed as histograms by date of publication.</p>
 
 </div>
 </div>
@@ -13749,7 +13756,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_62_0.png"
+<img src="manuscript_files/manuscript_69_0.png"
 >
 </div>
 
@@ -13762,6 +13769,26 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>{{print figure_link("oa_lag_green")}}: OA lag for Green OA</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first row of {{ print figure_link("oa_lag_green") }} is a histogram of all articles became newly available as Green OA in 2015, binned by year of publication.  By looking at the first row in depth, we can see that a few articles are made available <em>before</em> they are actually published (articles published in 2016 or 2017) -- these were  preprints, submitted before publication.  Continuing to look at the first row, we can see the bulk of the articles that became available in 2015 were published in 2015 (lag of zero years) or in 2016 (lag of 1 year).  A few were published in 2015 (an OA lag of 2 years), and then a long tail represents the backfilling of older articles.</p>
+<p>Looking now at all rows of {{ print figure_link("oa_lag_green") }}, we can see that a similar OA lag pattern (a few preprints are available before publication, most articles become available within a 3 year OA lag, then a long tail) has held for the last four years of Green OA availability (the distribution of the bars are similar in all four rows.</p>
+<p>We can also see that the relative amount of green OA is growing slightly by year of observation (the area under the whole histogram is higher for subsequent years of observation).</p>
+<p>We will predict the pattern and absolute amount of green OA based on these trends in <a href="#section-4-3-7">Section 4.3.7</a>.</p>
+<p>More details on Green OA lag are included in the Supplementary Information.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="OA-lag-for-Bronze-Delayed-OA">OA lag for Bronze Delayed OA<a class="anchor-link" href="#OA-lag-for-Bronze-Delayed-OA">&#182;</a></h4>
 </div>
 </div>
@@ -13769,8 +13796,6 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We approach the availability of Bronze Delayed OA the same way as we did with Green OA above.</p>
-<p>We do not have a record of when Delayed OA papers became available, so we used a list of Delayed OA journals and their embargo periods to estimate the date of availability.</p>
 <p>There was no publicly-available definitive list of Delayed OA journals, so we derived a list empirically based on the Unpaywall database. We cross-checked the list with journal policies as well as Laakso and Björk (2013) and these sources:</p>
 <ul>
 <li><p><a href="https://www.elsevier.com/about/open-science/open-access/open-archive">https://www.elsevier.com/about/open-science/open-access/open-archive</a></p>
@@ -13782,7 +13807,7 @@ $( document ).ready(function(){
 <li><p><a href="https://en.wikipedia.org/wiki/Category:Delayed_open_access_journals">https://en.wikipedia.org/wiki/Category:Delayed_open_access_journals</a></p>
 </li>
 </ul>
-<p>The list includes 546 journals, with the following embargo lengths:</p>
+<p>Our resulting list includes 2.5 million articles published in 546 journals, with the following embargo lengths:</p>
 <table>
 <thead><tr>
 <th>embargo length (months)</th>
@@ -13820,7 +13845,46 @@ $( document ).ready(function(){
 </tr>
 </tbody>
 </table>
-<p>Using this list, 2.5 million articles are considered Delayed OA. Their breakdown by availability year and publication year follows. You can see the effect of the 12 and 18 month embargos, which cover more journals and those with higher volume.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div id="figure-oa_lag_delayed_bronze"></div>
+    <script>
+    var key = "figure-oa_lag_delayed_bronze"
+    $("div").each(function(i){
+        if (this.id === key){
+            this.innerHTML = '<a name="' + key + '"></a>';
+        }
+    });
+    </script>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We approach the availability of Bronze Delayed OA the same way as Green OA above,</p>
+<p>Their distribution of Delayed Bronze OA articles by date first made OA is shown in {{ print figure_link("oa_lag_delayed_bronze") }}, as histograms by publication date. Most articles become available after a 1 year lag.  Bumps that represent articles that become available at 24, 36, and 48 months are also clearly visible.</p>
 
 </div>
 </div>
@@ -13839,7 +13903,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_65_0.png"
+<img src="manuscript_files/manuscript_76_0.png"
 >
 </div>
 
@@ -13852,7 +13916,24 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="OA-lag-for-Closed-access">OA lag for Closed access<a class="anchor-link" href="#OA-lag-for-Closed-access">&#182;</a></h4>
+<p><strong>{{print figure_link("oa_lag_delayed_bronze")}}: OA lag for Delayed Bronze</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Closed-access-at-date-of-observation">Closed access at date of observation<a class="anchor-link" href="#Closed-access-at-date-of-observation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Closed access articles don't have an OA lag <em>per se</em>, but whether an article is considered Closed access may differ by date of observation if it begins Closed when it is published and later becomes Green or Bronze OA.</p>
+<p>We model this simply by considering an article Closed access at the date of observation if it has been published and is not considered OA at the time of observation.</p>
+
 </div>
 </div>
 </div>
@@ -13862,27 +13943,6 @@ $( document ).ready(function(){
 <h4 id="OA-by-date-of-observation,-historically">OA by date of observation, historically<a class="anchor-link" href="#OA-by-date-of-observation,-historically">&#182;</a></h4>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;all_predicted_papers&#39;. Time since pickling  19:37:06.609515
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -13915,6 +13975,45 @@ $( document ).ready(function(){
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We combine the OA lags modelled above to graph OA by date of observation in {{ print figure_link('small-multiples-num-papers-past')}}.</p>
+<p>Each row is a year of observation, from 2015 to 2018 (the most recent full publication year).   Each column is a different OA type.  Each mini plot is a histogram of all articles available by the given observation date, for the OA type.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>loading cached value for variable &#39;all_predicted_papers_historically&#39;. Time since pickling  4:11:57.957358
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -13929,7 +14028,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_70_0.png"
+<img src="manuscript_files/manuscript_87_0.png"
 >
 </div>
 
@@ -13942,7 +14041,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>{{print figure_link("small-multiples-num-papers-past")}}: Articles by year of observation.</strong>  Y-axis is number of articles (millions).</p>
+<p><strong>{{print figure_link("small-multiples-num-papers-past")}}: Articles by year of observation, past.</strong>  Each row is a Year of Observation, the x-axis is the Year of Publication, and the y-axis is the total number of articles (millions).</p>
 
 </div>
 </div>
@@ -13950,6 +14049,17 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that Gold, Hybrid, and Immediate Bronze OA articles all simply accumulate new articles each year of observation in the corresponding year of publication (the 2016 rows are identical to their 2015 counterparts, other than the addition of the most recent year new bar).</p>
+<p>In contrast, Green OA and Delayed Bronze OA graphs all have more complicated additions.  The graphs for the 2016 observation year differ from the 2015 graphs  above them in that they have a few new publications in 2016, but they also boost the 2015 publication year, and even older years.  In fact we can see that when observed in 2018 (the bottom row of the whole figure) Green OA is higher in all publication years than it was in the observation year 2015 (the top row in the figure) because of expired embargos and backfilling.  A similar trend is visible for Delayed Bronze OA.</p>
+<p>The Closed access graph has the opposite trend -- its most recent observation year in the bottom row shows <em>fewer</em> papers considered Closed OA published in 2010 (the first bar in the histogram) compared to an observation in 2015 (first row).  This is because some of what was "observed" as Closed in 2015 has become Green and Bronze by the observation year of 2018, and therefore no longer appears in the Closed access histograms.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="section-4-3-7"></a></p>
 <h4 id="Extrapolating-growth">Extrapolating growth<a class="anchor-link" href="#Extrapolating-growth">&#182;</a></h4>
 </div>
 </div>
@@ -13957,19 +14067,98 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="OA-by-date-of-observation,-in-the-future">OA by date of observation, in the future<a class="anchor-link" href="#OA-by-date-of-observation,-in-the-future">&#182;</a></h4>
+<p>We wish to extend {{print figure_link("small-multiples-num-papers-past")}} to future years.  How can we extrapolate these graphs into the future?</p>
+<p>The model we use is based on observing that the papers that become available each year have a consistent distribution by article age, as seen in {{print figure_link("oa_lag_green")}} for Green OA and {{print figure_link("oa_lag_delayed_bronze")}} for Bronze OA (the rows within each graph have a similar shape).</p>
+<p>If we then assume that the articles that will become available next year are similar to the articles that became available this year, we can predict the future like this:</p>
+<hr>
+
+<pre><code>    total articles available next year, for a given age and OA type  = 
+
+        (total articles available this year, for the age and OA type)
+
+         +
+
+        (scaling factor to account for growth, for the OA type
+
+         *
+
+         articles made available last year, for the age and OA type)</code></pre>
+<hr>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Because access patterns depend so heavily on recency of publication, to estimate how open access affects access rates we need to take into account the age when articles are made available. We will use the work we did in the "Predicting number of papers at their time of availability" section. The figure below shows the number of papers we calculate, then predict, for all OA types.</p>
-<p>Each column of the figure is a type of OA (green, gold, hybrid, immediate bronze, delayed bronze, closed).</p>
-<p>Each row is a year of availability assessment, from 2016 in the first row to 2023 in the last row.  [talk about what y axis is scaled to?]</p>
-<p>Each plot is the number of papers available for that year and that OA type, by year of publication on the x axis.</p>
-<p>Future years are calculated by assuming the new additions in future years will follow a similar pattern to 2018, subject to overall growth. The overall growth is assessed by a linear extrapolation on Year 0.   </p>
-<p>[maybe transpose this so that it goes ltr in direction of time, insteaad of top to bottom, which is less common?] </p>
+<p>The <code>total articles available this year</code> is the observation year 2018 (the last row) in {{print figure_link("small-multiples-num-papers-past")}}, and the <code>articles made available last year, for the age and OA type</code> is the last row of  {{print figure_link("oa_lag_green")}} for Green OA and {{print figure_link("oa_lag_delayed_bronze")}} for Bronze OA.  All that remains is to calculate the <code>scaling factor to account for growth, for the OA type</code>.  We do this below, in {{print figure_link("scaling_factor")}}.</p>
+<p>{{print figure_link("scaling_factor")}} shows graphs of the last five years of OA made available by year (y-axis) for each OA type.  The first row is a linear fit to this data, the second row is an exponential fit, and the final row is an exponential fit with a different optimization seed.  The curve fits were done using the <code>scipy.optimize.curve_fit()</code> function.  The r^2 value is shown below each graph to indicate the goodness of fit.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="manuscript_files/manuscript_95_0.png"
+>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="manuscript_files/manuscript_95_1.png"
+>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="manuscript_files/manuscript_95_2.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>{{print figure_link("scaling_factor")}}: Articles by year of observation.</strong>  Each row is a year of observation, the x-axis is the year of publication, and the y-axis is the total number of number of articles (millions) .</p>
 
 </div>
 </div>
@@ -14005,6 +14194,36 @@ $( document ).ready(function(){
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We chose the extrapolation functions with the highest r^2 values for each OA type, and used these to derive scaling factors for extrapolations through the year 2025.  Using these scaling factors, we predict the growth of OA as shown in <a href="#figure-small-multiples-num-papers-future">Figure 7</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>resetting cached values for all_predicted_papers_future
+creating new value for variable &#39;all_predicted_papers_future&#39;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -14019,7 +14238,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_76_0.png"
+<img src="manuscript_files/manuscript_100_0.png"
 >
 </div>
 
@@ -14032,10 +14251,100 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>{{print figure_link("small-multiples-num-papers-future")}}: Articles by year of observation.</strong>  Y-axis is number of articles (millions).</p>
+<p><strong><a href="#figure-small-multiples-num-papers-future">Figure 7</a>: Articles by year of observation, extrapolated into the future.</strong>   Each row is a Year of Observation, the x-axis is the Year of Publication, and the y-axis is the total number of articles (millions).</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="OA-by-date-of-observation">OA by date of observation<a class="anchor-link" href="#OA-by-date-of-observation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We now look at this graphed one way</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="manuscript_files/manuscript_104_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><a href="#figure-articles_by_observation_year_prediction">Figure 1</a>: Total articles by OA type, by year of observation.</strong> OA type as of year of observation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And then we do a diff</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="manuscript_files/manuscript_107_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><a href="#figure-articles_by_observation_year_prediction_diff">Figure 2</a>: Change in number of articles from previous year of observation, by OA type.</strong> Includes newly published articles, as well as articles that have changed OA type.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14077,34 +14386,6 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-view-by-age-no-color"></div>
-    <script>
-    var key = "figure-view-by-age-no-color"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14115,27 +14396,6 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_82_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14195,34 +14455,6 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-views-by-age-with-color"></div>
-    <script>
-    var key = "figure-views-by-age-with-color"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14242,38 +14474,6 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;views_per_year_total&#39;. Time since pickling  19:47:22.067367
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_91_1.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14285,34 +14485,6 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-num-papers-by-age-2018"></div>
-    <script>
-    var key = "figure-num-papers-by-age-2018"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14323,38 +14495,6 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>creating new value for variable &#39;papers_by_availability_year_total_2018&#39;
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_95_1.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14376,68 +14516,8 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-views-by-article"></div>
-    <script>
-    var key = "figure-views-by-article"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;views_per_article_total&#39;. Time since pickling  19:41:01.626308
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_99_1.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14463,70 +14543,17 @@ $( document ).ready(function(){
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-views-small"></div>
-    <script>
-    var key = "figure-views-small"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Final-answer">Final answer<a class="anchor-link" href="#Final-answer">&#182;</a></h4>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;predicted_views_total&#39;. Time since pickling  19:29:47.453164
-</pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_104_1.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14547,57 +14574,8 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-views-large"></div>
-    <script>
-    var key = "figure-views-large"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_108_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14618,60 +14596,11 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-views-stacked"></div>
-    <script>
-    var key = "figure-views-stacked"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_113_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14709,57 +14638,14 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-biorxiv-exp"></div>
-    <script>
-    var key = "figure-biorxiv-exp"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
 </div>
-
-</div>
-
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_118_0.png"
->
 </div>
-
-</div>
-
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14780,57 +14666,14 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-biorxiv-views"></div>
-    <script>
-    var key = "figure-biorxiv-views"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
 </div>
-
-</div>
-
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_122_0.png"
->
 </div>
-
-</div>
-
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14843,34 +14686,6 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-biorxiv-stacked"></div>
-    <script>
-    var key = "figure-biorxiv-stacked"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14881,27 +14696,6 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_126_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -14921,27 +14715,6 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_129_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -15101,34 +14874,6 @@ then can be viewed at
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-detailed-green"></div>
-    <script>
-    var key = "figure-detailed-green"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15141,55 +14886,6 @@ then can be viewed at
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_147_0.png"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_147_1.png"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_147_2.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -15212,48 +14908,6 @@ then can be viewed at
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-zoom-in-green"></div>
-    <script>
-    var key = "figure-zoom-in-green"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_150_1.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15272,85 +14926,8 @@ then can be viewed at
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-detailed-bronze"></div>
-    <script>
-    var key = "figure-detailed-bronze"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_154_0.png"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_154_1.png"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="manuscript_files/manuscript_154_2.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -15362,34 +14939,6 @@ then can be viewed at
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-zoom-in-bronze"></div>
-    <script>
-    var key = "figure-zoom-in-bronze"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
