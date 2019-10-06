@@ -13128,10 +13128,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Heather Piwowar <em><sup>1</sup>, Jason Priem </em><sup>1</sup>, Richard Orr<sup>1</sup></strong></p>
+<p><strong>Heather Piwowar &#42;<sup>1</sup>, Jason Priem &#42;<sup>1</sup>, Richard Orr<sup>1</sup></strong></p>
 <p>&#42; shared first authorship<br>
 <sup>1</sup><em>Our Research (team@ourresearch.org)</em></p>
-<p>Preprint first published: October 5, 2019.</p>
+<p>Preprint first submitted: October 6, 2019</p>
 
 </div>
 </div>
@@ -13169,6 +13169,13 @@ div#notebook {
 </li>
 </ul>
 <p>Despite how useful OA prediction would be, only a few studies have made an attempt to empirically predict open access rates. Lewis (2012) extrapolated the rate at which <a href="https://en.wikipedia.org/wiki/Open_access#Gold_OA">gold OA</a> would replace subscription-based publishing using a simple log linear extrapolation of gold vs subscription market share. Antelman (2017) used one empirically-derived growth rate for <a href="https://en.wikipedia.org/wiki/Open_access#Green_OA">green OA</a> and another for all other kinds of OA combined. Both of these studies are based on data collected before 2012, and rely on relatively simple models. Moreover, these studies predict the number of papers that are OA. While this number is important, it is arguably less meaningful than the number of views that are OA, since this latter number describes the prevalence of OA as experienced by actual readers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This paper aims to address this gap in the literature. In it, we build a detailed model using data extrapolated from large and up-to-date Unpaywall dataset (<a href="https://unpaywall.org/). ">https://unpaywall.org/). </a> We use the model to predict the number of articles that will be OA (including gold, green, hybrid, and bronze OA) over the next five years, and also use data from the Unpaywall browser add-on (<a href="https://unpaywall.org/products/extension">https://unpaywall.org/products/extension</a>) to predict the proportion of scholarly article views that will lead readers to OA articles over time.</p>
 <p>This paper aims to provide models of OA growth, taking the following complexities into account:</p>
 <ul>
@@ -13217,7 +13224,14 @@ div#notebook {
 <p>The data in this analysis comes from two sources: (1) the Unpaywall dataset and (2) the access logs of the Unpaywall web browser extension.</p>
 <p><a id="section-oa-vocab"></a>
 <a id="section-2-1"></a></p>
-<h3 id="2.1-OA-type:-the-Unpaywall-dataset-of-OA-availability">2.1 OA type: the Unpaywall dataset of OA availability<a class="anchor-link" href="#2.1-OA-type:-the-Unpaywall-dataset-of-OA-availability">&#182;</a></h3><p>Predicting levels of open access publication in the future requires detailed, accurate, timely data.. This study uses the <a href="https://unpaywall.org/">Unpaywall</a> dataset to provide this data.. Unpaywall is an open source application that  links every research article that has been assigned a Crossref DOI (more than 100 million in total) to the OA URLs where the paper can be read for free. It  is built and maintained by Our Research (formerly Impactstor), a US-based nonprofit organization. Unpaywall gathers data gathered from over 50,000 journals and open-access repositories from all over the world. The full Unpaywall dataset is freely, publicly available (see details: <a href="https://unpaywall.org/user-guides/research">https://unpaywall.org/user-guides/research</a>).</p>
+<h3 id="2.1-OA-type:-the-Unpaywall-dataset-of-OA-availability">2.1 OA type: the Unpaywall dataset of OA availability<a class="anchor-link" href="#2.1-OA-type:-the-Unpaywall-dataset-of-OA-availability">&#182;</a></h3><p>Predicting levels of open access publication in the future requires detailed, accurate, timely data. This study uses the <a href="https://unpaywall.org/">Unpaywall</a> dataset to provide this data. Unpaywall is an open source application that  links every research article that has been assigned a Crossref DOI (more than 100 million in total) to the OA URLs where the paper can be read for free. It  is built and maintained by Our Research (formerly Impactstory), a US-based nonprofit organization. Unpaywall gathers data gathered from over 50,000 journals and open-access repositories from all over the world. The full Unpaywall dataset is freely, publicly available (see details: <a href="https://unpaywall.org/user-guides/research">https://unpaywall.org/user-guides/research</a>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Our definitions of OA type (gold, green, hybrid, bronze, closed) are described in Piwowar et al. (2018). To facilitate prediction, for the purpose of this analysis we subdivided bronze OA into immediate and delayed OA. In summary, these definitions are:</p>
 <ul>
 <li><strong><span style="color:gold; font-size:100%;">&#x2588;</span>  Gold:</strong> published in a fully-OA journal</li>
@@ -13230,9 +13244,16 @@ div#notebook {
 <li><strong><span style="color:green; font-size:100%;">&#x2588;</span> Green:</strong> published in a toll-access journal and the only fulltext copy available is in an OA repository</li>
 <li><strong><span style="color:gray; font-size:100%;">&#x2588;</span> Closed:</strong> everything else</li>
 </ul>
-<p>This analysis uses all articles with a Crossref article type of "journal-article" published between 1950 and the date of the analysis (2019-10-05), which is 71 million articles.</p>
+<p>This analysis uses all articles with a Crossref article type of "journal-article" published between 1950 and the date of the analysis (October 2019), which is 71 million articles.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="section-2-2"></a></p>
-<h3 id="2.2-Article-views:-access-logs-of-the-Unpaywall-web-browser-extension">2.2 Article views: access logs of the Unpaywall web browser extension<a class="anchor-link" href="#2.2-Article-views:-access-logs-of-the-Unpaywall-web-browser-extension">&#182;</a></h3><p>Predicting the open access pattern of usage requests requires knowing the relative usage demands of papers based on their age and subject matter. This study has extracted these pageview patterns from the usage logs of the <a href="https://unpaywall.org/products/extension">Unpaywall browser extension</a> for Chrome and Firefox.</p>
+<h3 id="2.2-Article-views:-access-logs-of-the-Unpaywall-web-browser-extension">2.2 Article views: access logs of the Unpaywall web browser extension<a class="anchor-link" href="#2.2-Article-views:-access-logs-of-the-Unpaywall-web-browser-extension">&#182;</a></h3><p>Predicting the open access pattern of usage requests requires knowing the relative usage demands of papers based on their age. This study has extracted these pageview patterns from the usage logs of the <a href="https://unpaywall.org/products/extension">Unpaywall browser extension</a> for Chrome and Firefox.</p>
 
 </div>
 </div>
@@ -13274,7 +13295,8 @@ div#notebook {
 <p>This extension is an open-source tool made by the same non-profit as the Unpaywall dataset described above, with the goal of helping people conveniently find free copies of research papers directly from their web browser. The extension has <a href="http://blog.our-research.org/unpaywall-200k-users/">more than 200,000 active users</a>, distributed globally, as shown in <a href="#figure-unpaywall_map">Figure 1</a>.</p>
 <p><img src="https://lh4.googleusercontent.com/1a3OyJMlPsCfeVC_Vn5NKwQL84k_HaXjQEzoY9U8x5vwiwhEF8QKnqrC83oOzWfoVu1ce_EfXl8UgTIY9e-Dgm0bv1ALQG_-JZwNN4i4Z7zpTkkapJah3rJkB0MNgjDD5tM8gGsk"></img></p>
 <p><strong><a href="#figure-unpaywall_map">Figure 1</a>: Map of Unpaywall users in February 2019.</strong></p>
-<p>The extension has received more than 50 million article access requests between August 2018 and August 2019. Because readership data is private and potentially sensitive, we are not releasing the Unpaywall usage logs along with the other datasets behind this paper.</p>
+<p>The Unpaywall browser automatically extension detects when a user is on a scholarly article webpage -- we consider this an access request, or a view. The extension can be disabled, or can be configured to only run upon request, but very few users use these settings.</p>
+<p>The extension has received more than 50 million article access requests between August 2018 and August 2019. Because readership data is private and potentially sensitive, we are not releasing the Unpaywall usage logs along with the other datasets behind this paper other than as aggregate counts by OA type by year.</p>
 
 </div>
 </div>
@@ -13284,12 +13306,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="3.-Approach">3. Approach<a class="anchor-link" href="#3.-Approach">&#182;</a></h2><h3 id="3.1-Overview">3.1 Overview<a class="anchor-link" href="#3.1-Overview">&#182;</a></h3><p>The goal of this analysis is to predict two aspects of OA growth:</p>
 <ol>
-<li>Growth in OA articles</li>
-<li>Growth in OA article views</li>
+<li>Growth in OA articles and their proportion of the literature over time</li>
+<li>Growth in OA article views and their proportion of all literature views over time</li>
 </ol>
-<p>Next, we examine the growth in OA articles <em>by date of observation</em>, rather than by date of publication.  This is a more difficult analysis than the first, and requires us to calculate the OA lag between publication and availability for different types of OA.  Once we have the pattern of OA availability by year, we forecast the OA availability of future years by assuming that it will have the same overall pattern as previous years -- the papers that will be made available next year will have the same age distribution as the papers that were made available last year.  We do allow the absolute number of papers to increase year-over-year: we estimate the future growth multiplier by extrapolating the height of past availability curves.  This analysis is presented in Section 4.2.</p>
-<p>Third, we turn to predicting the growth of OA article views -- what proportion of what is read is available OA, and how will this change in the future?  The Unpaywall browser extension logs give us a baseline of what is read right now.  By assuming that reading patterns remain relatively unchanged over time (specifically the probability that a reader wants to read a paper given its age and OA type), we use the estimates we made in Section 4.2 to calculate the relative number of views by OA type in the past and the future.  This is described in Section 4.3 and Supplementary Information.</p>
-<p>Finally, we look at the impact of including a disruptive change into our models, in this case the growth of bioRxiv.  Analysis and results are in Section 4.4.</p>
 
 </div>
 </div>
@@ -13297,7 +13316,25 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.2-Glossary">3.2 Glossary<a class="anchor-link" href="#3.2-Glossary">&#182;</a></h3><p>In addition to the OA types defined in <a href="#section-oa-vocab">Section 2</a>, we define additional terms as we use them in this paper, in approximate order they are discussed:</p>
+<p>We examine the growth in OA articles <em>by date of observation</em>, rather than by date of publication.  This requires us to calculate the OA lag between publication and availability for different types of OA, which is done in <a href="#section-4-1">Section 4.1</a>.</p>
+<p>Once we have the pattern of OA availability by year, we forecast the OA availability for future years by assuming that it will have the same overall pattern as previous years -- the papers that will be made available next year will have the same age distribution as papers that were made available last year.  We allow the absolute number of papers to increase year-over-year: we estimate the future growth multiplier by extrapolating the height of past availability curves.  This analysis is presented in <a href="#section-4-2">Section 4.2</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, we turn to predicting the growth of OA article views -- what proportion of what is read is available OA, and how will this change in the future?  The Unpaywall browser extension logs give us a relative baseline of what is read right now.  By assuming that reading patterns remain relatively unchanged over time (specifically the probability that a reader wants to read a paper given its age and OA type), we use the publication estimates we made in previous sections to calculate the relative number of views by OA type in the past and the future.  This is described in <a href="#section-4-3">Section 4.3</a>.</p>
+<p>Finally, we look at the impact of extending the model to include a disruptive change, in this case the growth of bioRxiv, in <a href="#section-4-4">Section 4.4</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.2-Glossary">3.2 Glossary<a class="anchor-link" href="#3.2-Glossary">&#182;</a></h3><p>In addition to the OA types defined in <a href="#section-oa-vocab">Section 2.1</a>, we define additional terms as we use them in this paper, in approximate order they are discussed:</p>
 <ul>
 <li><strong>Date of publication</strong>: the date an article is published in a journal</li>
 <li><strong>Embargo</strong>: the delay that some toll-access journals require between date of publication and when an article can be made Green or Delayed Bronze OA</li>
@@ -13305,13 +13342,39 @@ div#notebook {
 <li><strong>OA type</strong>: the OA classification of an article, as defined in <a href="#section-oa-vocab">Section 2</a>.  The OA type of an article may change over time (from Closed to Delayed Bronze OA, or from Closed to Green OA) because of embargos and other self-archiving delays</li>
 <li><strong>Date first available OA</strong>: the date an article first becomes an OA type other than "Closed"</li>
 <li><strong>OA lag</strong>: the length of time between an article's Date of Publication and its Date First Available OA<pre></pre></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><strong>OA assessment</strong>: the determination of the OA type of an article at a given point in time</li>
-<li><strong>Date of observation</strong>: the date at which we make an OA assessment</li>
-<li><strong>Snapshot date of OA assessment</strong>: the point in time for which we make an OA assessment for an article or group of articles</li>
-<li><strong>Snapshot age</strong> of an article: the length of time between the date of a snapshot and the article's date of publication<pre></pre></li>
+<li><strong>Date of observation</strong>: the point in time for which we make an OA assessment for an article.  Explained in <a href="#section-3-3">Section 3.3</a>.</li>
+<li><strong>Observation age</strong> of an article: the length of time between an OA assessment observation and the article's date of publication<pre></pre></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><strong>View</strong>: someone on the internet visited the publisher webpage of an article, presumably with the hope of reading the article</li>
 <li><strong>Date of view</strong>: the date of the view</li>
 <li><strong>View age</strong> of an article: the length of time between an article's date of publication and the date of a view<pre></pre></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><strong>Articles by age curve</strong>: for a given snapshot, the plot of snapshot age (in years) on the x-axis and number of articles published of that snapshot age on the y-axis</li>
 <li><strong>Views by age curve</strong>: the plot of view age (in years) on the x-axis and number of views received by articles of that view age on the y-axis</li>
 <li><strong>Views per article by age curve</strong>: the plot of view or snapshot age (in years) on the x-axis and number of views per article (by views of that view age and articles of that snapshot age) on the y-axis</li>
@@ -13324,14 +13387,62 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Methods-and-Results">4. Methods and Results<a class="anchor-link" href="#4.-Methods-and-Results">&#182;</a></h2>
+<p><a id="section-3-3"></a></p>
+<h3 id="3.3-Date-of-Observation">3.3 Date of Observation<a class="anchor-link" href="#3.3-Date-of-Observation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this paper we approach the growth of OA from the Date of Observation of OA assessment, rather than the date of publication.  We explain this with the use of <a href="#figure-date_of_observation">Figure 2</a>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.1-Analysis">4.1 Analysis<a class="anchor-link" href="#4.1-Analysis">&#182;</a></h3><p>The analysis was implemented as an executable python Jupyter notebook using the pandas, scipy, matplotlib, and sqlalchemy libraries. See the <a href="#Data-and-code-availability">Data and code availability section</a> below for links to the analysis code.</p>
+<table>
+<tr><td>
+<img src="https://i.imgur.com/Fj4ukLh.png"></img>
+
+**<a href="#figure-date_of_observation">Figure 2</a>: Date of observation.**
+
+</td><td>
+
+Let’s imagine two observers, <span style="color:blue">Alice</span> (blue) and <span style="color:red">Bob</span> (red), shown by the two stick figures at the top of <a href="#figure-date_of_observation">Figure 2</a>.
+
+Alice lives at the end of Year 1--that’s her "Date Of Observation." Looking down, she can see all 8 articles (represented by solid colored dots) published in Year 1, along with their access status: Gold OA, Green OA, or Closed. The Year of Publication for all eight of these articles is Year 1.
+
+Alice likes reading articles, so she decides to read all eight Year 1 articles, one by one.
+
+She starts with Article A. This article started its life early in the year as Closed. Later that year, though--after an OA Lag of about six months--Article C became Green OA as its author deposited a manuscript (the green circle) in their institutional repository. Now, at Alice’s Date of Observation, it’s open! Excellent. Since Alice is inclined toward organization, she puts Article A article in a stack of Green articles she’s keeping below.
+
+Now let’s look at Bob. Bob lives in Alice’s future, in Year 3 (ie, his “Date of Observation” is Year 3). Like Alice, he’s happy to discover that Article A is open. He puts it in his stack of Green OA articles, which he’s further organized by date of their publication (it goes in the Year 1 stack since that’s its date of publication).
+
+Next, Alice and Bob come to Article B, which is a tricky one. Alice is sad: she can’t read the article, and places it in her Closed stack. Unbeknownst to poor Alice, she is a victim of OA Lag, since Article B will become OA in Year 2. By contrast, Bob, from his comfortable perch in the future, is able to read the article. He places it in his Green Year 1 stack. He now has two articles in this stack, since he’s found two Green OA articles in Year 1.
+
+Finally, Alice and Bob both find Article C is closed, and place it in the closed stack for Year 1. We can model this behavior for a hypothetical reader at each year of observation, giving us their view on the world--and that’s exactly the approach we take in this paper.
+
+Now, let’s say that Bob has decided he’s going to figure out what OA will look like in Year 4. He starts with Gold. This is easy, since Gold article are open immediately upon publication, and publication date is easy to find from article metadata. So, he figures out how many articles were Gold for Alice (1), how many in Year 2 (3), and how many in his own Year 3 (6). Then he computes percentages, and graphs them out using the stacked area chart at the bottom of <a href="#figure-date_of_observation">Figure 2</a>. From there, it’s easy to extrapolate forward a year.
+
+For Green, he does the same thing--but he makes sure to account for OA Lag. Bob is trying to draw a picture of the world every year, as it appeared to the denizens of that world. He wants Alice’s world as it appeared to Alice, and the same for Year 2, and so on. So he includes OA Lag in his calculations for Green OA, in addition to publication year. Once he has a good picture from each Date Of Observation, and a good understanding of what the OA Lag looks like, he can once again extrapolate to find Year 4 numbers.
+
+Bob is using the same approach we will use in this paper--although in practice, we will find it to be rather more complex, due to varying lengths of OA Lag, additional colors, of OA, and a lack of stick figures. 
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.4-Statistical-analysis">3.4 Statistical analysis<a class="anchor-link" href="#3.4-Statistical-analysis">&#182;</a></h3><p>The analysis was implemented as an executable python Jupyter notebook using the pandas, scipy, matplotlib, and sqlalchemy libraries. See the <a href="#Data-and-code-availability">Data and code availability section</a> below for links to the analysis code and raw data.</p>
 
 </div>
 </div>
@@ -13469,65 +13580,23 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="section-4-2"></a></p>
-<h3 id="4.2-Predicting-number-of-articles-by-OA-type,-by-date-of-observation">4.2 Predicting number of articles by OA type, by date of observation<a class="anchor-link" href="#4.2-Predicting-number-of-articles-by-OA-type,-by-date-of-observation">&#182;</a></h3>
+<h2 id="4.-Methods-and-Results">4. Methods and Results<a class="anchor-link" href="#4.-Methods-and-Results">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.1-Date-of-observation">4.2.1 Date of observation<a class="anchor-link" href="#4.2.1-Date-of-observation">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div id="figure-date_of_observation"></div>
-    <script>
-    var key = "figure-date_of_observation"
-    $("div").each(function(i){
-        if (this.id === key){
-            this.innerHTML = '<a name="' + key + '"></a>';
-        }
-    });
-    </script>
-    
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Because of the importance of embargos, in this paper we approach the growth of OA from the date of observation of OA assessment, rather than the date of publication.  We show what that means in the following figure:</p>
-<p><img src="https://i.imgur.com/Fj4ukLh.png" style="float: left;"></img></p>
-<p><strong><a href="#figure-date_of_observation">Figure 2</a>: Date of observation.</strong></p>
-<p>We'll compute OA by year of observation by first understanding OA lag by OA type, then extrapolating OA growth from there.</p>
-
+<p><a id="section-4-1"></a></p>
+<h3 id="4.1-Past-OA-Publication">4.1 Past OA Publication<a class="anchor-link" href="#4.1-Past-OA-Publication">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.2-OA-lag">4.2.2 OA lag<a class="anchor-link" href="#4.2.2-OA-lag">&#182;</a></h4><p>For Gold OA and Hybrid OA understanding OA lag is easy -- there is no lag: papers are OA at the time of publication.</p>
-<p>For Green and Bronze OA the lag is more complicated. Authors often self-archive (upload their paper to a repository) months or years after the official publication date of the paper, typically  because the journal has a policy that authors must wait a certain length of time (the "embargo period") before self-archiving. Funder policies that mandate Green OA often allow a delay between publication and availability (notably the National Institutes of Health in the USA, accounting for most of the content in the large PMC repository). Finally, some journals open up their back catalogs once articles reach a certain age, which has been called "delayed OA" (Laakso and Björk, 2013) and we consider an important subset of Bronze.</p>
+<h4 id="4.1.1-OA-lag">4.1.1 OA lag<a class="anchor-link" href="#4.1.1-OA-lag">&#182;</a></h4><p>For Gold OA and Hybrid OA understanding OA lag is easy -- there is no lag: papers are OA at the time of publication.</p>
+<p>For Green and Bronze OA the lag is more complicated. Authors often self-archive (upload their paper to a repository) months or years after the official publication date of the paper, typically  because the journal has a policy that authors must wait a certain length of time (the "embargo period") before self-archiving. Funder policies that mandate Green OA often allow a delay between publication and availability (notably the National Institutes of Health in the USA allows a 12 month embargo, which is relevant for most of the content in the large PMC repository). Finally, some journals open up their back catalogs once articles reach a certain age, which has been called "delayed OA" (Laakso and Björk, 2013) and we consider an important subset of Bronze.</p>
 <p>We explore and model these dynamics below.</p>
 
 </div>
@@ -13536,7 +13605,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.3.-OA-lag-for-Green-OA">4.2.3. OA lag for Green OA<a class="anchor-link" href="#4.2.3.-OA-lag-for-Green-OA">&#182;</a></h4>
+<h4 id="4.1.2.-OA-lag-for-Green-OA">4.1.2. OA lag for Green OA<a class="anchor-link" href="#4.1.2.-OA-lag-for-Green-OA">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13574,7 +13643,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The age of an article when it available as Green OA can be derived from the date it was published in a repository, which we can get from its matched <a href="https://www.openarchives.org/pmh/">OAI-PMH records</a> (as harvested by Unpaywall).</p>
+<p>Calculating age requires data on both when it was first published in the journal and when it first became OA.</p>
+<p>When an article becomes Green OA can be derived from the date it was published in a repository, which we can get from its matched <a href="https://www.openarchives.org/pmh/">OAI-PMH records</a> (as harvested by Unpaywall).</p>
 <p><a href="#figure-oa_lag_green">Figure 3</a> shows Green OA articles by date first made OA.  Articles first made OA in 2015 are shown in the first row, 2016 the second row, and so on.  Articles in each row are displayed as histograms by date of publication.</p>
 
 </div>
@@ -13608,7 +13678,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-oa_lag_green">Figure 3</a>: OA lag for Green OA.</strong>  Each plot shows articles that were first made available during the given year of observation, by year of their publication on the x-axis.</p>
+<p><strong>{{print figure_link("oa_lag_green")}}: OA lag for Green OA.</strong>  Each plot shows articles that were first made available during the given year of observation, by year of their publication on the x-axis.</p>
 
 </div>
 </div>
@@ -13616,10 +13686,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The first row of <a href="#figure-oa_lag_green">Figure 3</a> is a histogram of all articles became newly available as Green OA in 2015, binned by year of publication.  By looking at the first row in depth, we can see that a few articles are made available <em>before</em> they are actually published (articles published in 2016 or 2017) -- these were  preprints, submitted before publication.  Continuing to look at the first row, we can see the bulk of the articles that became available in 2015 were published in 2015 (lag of zero years) or in 2016 (lag of 1 year).  A few were published in 2015 (an OA lag of 2 years), and then a long tail represents the backfilling of older articles.</p>
-<p>Looking now at all rows of <a href="#figure-oa_lag_green">Figure 3</a>, we can see that a similar OA lag pattern (a few preprints are available before publication, most articles become available within a 3 year OA lag, then a long tail) has held for the last four years of Green OA availability (the distribution of the bars are similar in all four rows.</p>
+<p>The first row of {{ print figure_link("oa_lag_green") }} is a histogram of all articles became newly available as Green OA in 2015, binned by year of publication.  By looking at the first row in depth, we can see that a few articles are made available <em>before</em> they are actually published (articles published in 2016 or 2017) -- these were  preprints, submitted before publication.  Continuing to look at the first row, we can see the bulk of the articles that became available in 2015 were published in 2015 (lag of zero years) or in 2016 (lag of 1 year).  A few were published in 2015 (an OA lag of 2 years), and then a long tail represents the backfilling of older articles.</p>
+<p>Looking now at all rows of {{ print figure_link("oa_lag_green") }}, we can see that a similar OA lag pattern (a few preprints are available before publication, most articles become available within a 3 year OA lag, then a long tail) has held for the last four years of Green OA availability (the distribution of the bars are similar in all four rows.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also see that the relative amount of green OA is growing slightly by year of observation (the area under the whole histogram is higher for subsequent years of observation).</p>
-<p>We will predict the pattern and absolute amount of green OA based on these trends in <a href="#section-4-2-7">Section 4.2.7</a>.</p>
+<p>We will discuss how this data is used to calculate proportions of OA Types by date of observation in <a href="#section-4-2-6">Section 4.2.6</a>.  We will also use this data to predict the pattern and absolute amount of green OA in the future in <a href="#section-4-2-7">Section 4.2.7</a>.</p>
 <p>More details on Green OA lag are included in the Supplementary Information.</p>
 
 </div>
@@ -13628,7 +13705,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.4-OA-lag-for-Bronze-Delayed-OA">4.2.4 OA lag for Bronze Delayed OA<a class="anchor-link" href="#4.2.4-OA-lag-for-Bronze-Delayed-OA">&#182;</a></h4>
+<h4 id="4.1.3-OA-lag-for-Bronze-Delayed-OA">4.1.3 OA lag for Bronze Delayed OA<a class="anchor-link" href="#4.1.3-OA-lag-for-Bronze-Delayed-OA">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13650,7 +13727,21 @@ div#notebook {
 </li>
 </ul>
 <p>From those sources we determined that almost all embargos for Delayed OA journals are at 6, 18, 24, 36, 48, or 60 months.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Next we used the Unpaywall data to calculate the OA rate of all journals, partitioned by age of their articles.  We looked at Bronze OA rates before and after each of these common month cutoffs, highlighting cutoffs where OA was much less than 90% before the cutoff and 90% or higher afterwards.  For each cutoff that looked like a Delayed OA candidate, we manually examined the full OA pattern for the journal and made a judgment call about whether it had an OA pattern consistent with a Delayed OA journal (low OA rates for articles until an embargo date, then high OA rates).  We finally cross-referenced this empirically derived list with the sources again to see if it was roughly equivalent for journals on both lists -- it is, and the empirically derived list is more comprehensive.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Our resulting list includes 3.6 million articles (4.9% of all articles) published in 546 journals, with the following embargo lengths:</p>
 <table>
 <thead><tr>
@@ -13736,7 +13827,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We approach the availability of Bronze Delayed OA the same way as Green OA above.</p>
-<p>The distribution of Delayed Bronze OA articles by date first made OA is shown in <a href="#figure-oa_lag_delayed_bronze">Figure 4</a>, as histograms by publication date. Most articles become available after a 1 year lag.  Bumps that represent articles that become available at 24, 36, and 48 months are also clearly visible.</p>
+<p>The distribution of Delayed Bronze OA articles by date first made OA is shown in {{ print figure_link("oa_lag_delayed_bronze") }}, as histograms by publication date. Most articles become available after a 1 year lag.  Bumps that represent articles that become available at 24, 36, and 48 months are also clearly visible.</p>
 
 </div>
 </div>
@@ -13769,7 +13860,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-oa_lag_delayed_bronze">Figure 4</a>: OA lag for Delayed Bronze OA.</strong>  Each plot shows articles that were first made available during the given year of observation, by year of their publication on the x-axis.</p>
+<p><strong>{{print figure_link("oa_lag_delayed_bronze")}}: OA lag for Delayed Bronze OA.</strong>  Each plot shows articles that were first made available during the given year of observation, by year of their publication on the x-axis.</p>
 
 </div>
 </div>
@@ -13777,7 +13868,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.5-Closed-access-at-date-of-observation">4.2.5 Closed access at date of observation<a class="anchor-link" href="#4.2.5-Closed-access-at-date-of-observation">&#182;</a></h4>
+<h4 id="4.1.4-Closed-access-at-date-of-observation">4.1.4 Closed access at date of observation<a class="anchor-link" href="#4.1.4-Closed-access-at-date-of-observation">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13792,7 +13883,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.6-OA-by-date-of-observation,-historically">4.2.6 OA by date of observation, historically<a class="anchor-link" href="#4.2.6-OA-by-date-of-observation,-historically">&#182;</a></h4>
+<p><a id="section-4-1-5"></a></p>
+<h4 id="4.1.5-OA-by-date-of-observation,-historically">4.1.5 OA by date of observation, historically<a class="anchor-link" href="#4.1.5-OA-by-date-of-observation,-historically">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13830,7 +13922,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We combine the OA lags modelled above to graph OA by date of observation in <a href="#figure-small-multiples-num-papers-past">Figure 5</a>.</p>
+<p>We combine the OA lags modelled above to graph OA by date of observation in {{ print figure_link('small-multiples-num-papers-past')}}.</p>
 <p>Each row is a year of observation, from 2012 to 2015.   Each column is a different OA type.  Each mini plot is a histogram of all articles available by the given observation date, for the OA type.</p>
 
 </div>
@@ -13867,7 +13959,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-small-multiples-num-papers-past">Figure 5</a>: Articles by year of observation, 2014-2018.</strong>  Each row is an OA Type, each column is a Year of Observation, the x-axis of each graph is the Year of Publication, and the y-axis is the total number of articles (millions) available at the year of observation.</p>
+<p><strong>{{print figure_link("small-multiples-num-papers-past")}}: Articles by year of observation, 2014-2018.</strong>  Each row is an OA Type, each column is a Year of Observation, the x-axis of each graph is the Year of Publication, and the y-axis is the total number of articles (millions) available at the year of observation.</p>
 
 </div>
 </div>
@@ -13878,10 +13970,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that Gold, Hybrid, and Immediate Bronze OA articles all simply accumulate new articles each year of observation in the corresponding year of publication (the 2015 rows are identical to their 2014 counterparts, other than the addition of the most recent year new bar).</p>
+<p>We can see that Gold, Hybrid, and Immediate Bronze OA articles all simply accumulate new articles each year of observation in the corresponding year of publication (the {{ print first_year_row+1}} rows are identical to their {{ print first_year_row}} counterparts, other than the addition of the most recent year new bar).</p>
 <p><strong>HEATHER REWRITE THIS</strong></p>
-<p>In contrast, Green OA and Delayed Bronze OA graphs all have more complicated additions.  The graphs for the 2015 observation year differ from the 2014 graphs  above them in that they have a few new publications in 2015, but they also boost the 2014 publication year, and even older years.  In fact we can see that when observed in 2017 (the bottom row of the whole figure) Green OA is higher in all publication years than it was in the observation year 2014 (the top row in the figure) because of expired embargos and backfilling.  A similar trend is visible for Delayed Bronze OA.</p>
-<p>The Closed access graph has the opposite trend -- its most recent observation year in the bottom row shows <em>fewer</em> papers considered Closed OA published in 2010 (the first bar in the histogram) compared to an observation in 2014 (first row).  This is because some of what was "observed" as Closed in 2014 has become Green and Bronze by the observation year of 2017, and therefore no longer appears in the Closed access histograms.</p>
+<p>In contrast, Green OA and Delayed Bronze OA graphs all have more complicated additions.  The graphs for the {{ print first_year_row+1}} observation year differ from the {{ print first_year_row}} graphs  above them in that they have a few new publications in {{ print first_year_row+1}}, but they also boost the {{ print first_year_row}} publication year, and even older years.  In fact we can see that when observed in {{ print first_year_row+3}} (the bottom row of the whole figure) Green OA is higher in all publication years than it was in the observation year {{ print first_year_row}} (the top row in the figure) because of expired embargos and backfilling.  A similar trend is visible for Delayed Bronze OA.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Closed access graph has the opposite trend -- its most recent observation year in the bottom row shows <em>fewer</em> papers considered Closed OA published in 2010 (the first bar in the histogram) compared to an observation in {{ print first_year_row}} (first row).  This is because some of what was "observed" as Closed in {{ print first_year_row}} has become Green and Bronze by the observation year of {{ print first_year_row+3}}, and therefore no longer appears in the Closed access histograms.</p>
 
 </div>
 </div>
@@ -13920,16 +14019,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="section-4-2-7"></a></p>
-<h4 id="4.2.7-Extrapolating-growth">4.2.7 Extrapolating growth<a class="anchor-link" href="#4.2.7-Extrapolating-growth">&#182;</a></h4>
+<p><a id="section-4-2"></a></p>
+<h3 id="Future-OA-Publication">Future OA Publication<a class="anchor-link" href="#Future-OA-Publication">&#182;</a></h3><p><a id="section-4-2-1"></a></p>
+<h4 id="4.2.1-Extrapolating-growth">4.2.1 Extrapolating growth<a class="anchor-link" href="#4.2.1-Extrapolating-growth">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We wish to extend <a href="#figure-small-multiples-num-papers-past">Figure 5</a> to future years.  How can we extrapolate these graphs into the future?</p>
-<p>The model we use is based on observing that the papers that become available each year have a consistent distribution by article age, as seen in <a href="#figure-oa_lag_green">Figure 3</a> for Green OA and <a href="#figure-oa_lag_delayed_bronze">Figure 4</a> for Bronze OA (the rows within each graph have a similar shape).</p>
+<p>We wish to extend {{print figure_link("small-multiples-num-papers-past")}} to future years.  How can we extrapolate these graphs into the future?</p>
+<p>The model we use is based on observing that the papers that become available each year have a consistent distribution by article age, as seen in {{print figure_link("oa_lag_green")}} for Green OA and {{print figure_link("oa_lag_delayed_bronze")}} for Bronze OA (the rows within each graph have a similar shape).</p>
 <p>If we then assume that the articles that will become available next year are similar to the articles that became available this year, we can predict the future like this:</p>
 <hr>
 
@@ -14025,8 +14125,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>total articles available this year</code> is the observation year 2018 (the last row) in <a href="#figure-small-multiples-num-papers-past">Figure 5</a>, and the <code>articles made available last year, for the age and OA type</code> is the last row of  <a href="#figure-oa_lag_green">Figure 3</a> for Green OA and <a href="#figure-oa_lag_delayed_bronze">Figure 4</a> for Bronze OA.  All that remains is to calculate the <code>scaling factor to account for growth, for the OA type</code>.  We do this next.</p>
-<p>What we want to know is how the growth of articles is changing over time.  To figure this out, we start with a scatter plot of <em>new articles</em> by OA type by year of observation, in  <a href="#figure-extrap_linear">Figure 7</a>.  We add linear best fit line, using the <code>scipy.optimize.curve_fit()</code> function.  The r<sup>2</sup> value is shown below each graph to indicate the goodness of fit.</p>
+<p>The <code>total articles available this year</code> is the observation year 2018 (the last row) in {{print figure_link("small-multiples-num-papers-past")}}, and the <code>articles made available last year, for the age and OA type</code> is the last row of  {{print figure_link("oa_lag_green")}} for Green OA and {{print figure_link("oa_lag_delayed_bronze")}} for Bronze OA.  All that remains is to calculate the <code>scaling factor to account for growth, for the OA type</code>.  We do this next.</p>
+<p>What we want to know is how the growth of articles is changing over time.  To figure this out, we start with a scatter plot of <em>new articles</em> by OA type by year of observation, in  {{print figure_link("extrap_linear")}}.  We add linear best fit line, using the <code>scipy.optimize.curve_fit()</code> function.  The r<sup>2</sup> value is shown below each graph to indicate the goodness of fit.</p>
 
 </div>
 </div>
@@ -14059,7 +14159,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-extrap_linear">Figure 7</a>: Total articles by year of observation, by OA type, with a linear extrapolation.</strong></p>
+<p><strong>{{print figure_link("extrap_linear")}}: Total articles by year of observation, by OA type, with a linear extrapolation.</strong></p>
 
 </div>
 </div>
@@ -14067,7 +14167,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see this isn't a very good fit, so we try fitting with an exponential curve in <a href="#figure-extrap_exp">Figure 8</a>.  We can see this is a better fit for all OA types, both visually and because they have higher r<sup>2</sup> values.</p>
+<p>We can see this isn't a very good fit, so we try fitting with an exponential curve in {{print figure_link("extrap_exp")}}.  We can see this is a better fit for all OA types, both visually and because they have higher r<sup>2</sup> values.</p>
 
 </div>
 </div>
@@ -14100,7 +14200,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-extrap_exp">Figure 8</a>: Total articles by year of observation, by OA type, with an exponential extrapolation.</strong></p>
+<p><strong>{{print figure_link("extrap_exp")}}: Total articles by year of observation, by OA type, with an exponential extrapolation.</strong></p>
 
 </div>
 </div>
@@ -14108,7 +14208,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The closed access curve fit doesn't look great though, so we try a different set of seed parameters for the curve fit.  This results in a better fit for both Delayed Bronze and Closed, as we can see in <a href="#figure-extrap_negative_exp">Figure 9</a>.</p>
+<p>The closed access curve fit doesn't look great though, so we try a different set of seed parameters for the curve fit.  This results in a better fit for both Delayed Bronze and Closed, as we can see in {{print figure_link("extrap_negative_exp")}}.</p>
 
 </div>
 </div>
@@ -14141,7 +14241,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-extrap_negative_exp">Figure 9</a>: Total articles by year of observation, by OA type, with an exponential extrapolation fitting 1-exp().</strong></p>
+<p><strong>{{print figure_link("extrap_negative_exp")}}: Total articles by year of observation, by OA type, with an exponential extrapolation fitting 1-exp().</strong></p>
 
 </div>
 </div>
@@ -14183,7 +14283,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For each OA type e chose the extrapolation functions with the highest r<sup>2</sup> values, and used these to derive scaling factors for extrapolations through the year 2025.  Using these scaling factors, we predict the growth of OA as shown in <a href="#figure-small-multiples-num-papers-future">Figure 10</a></p>
+<p>For each OA type e chose the extrapolation functions with the highest r<sup>2</sup> values, and used these to derive scaling factors for extrapolations through the year 2025.  Using these scaling factors, we predict the growth of OA as shown in {{print figure_link("small-multiples-num-papers-future")}}</p>
 
 </div>
 </div>
@@ -14200,7 +14300,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;all_predicted_papers_future&#39;. Time since pickling  2:15:36.167680
+<pre>loading cached value for variable &#39;all_predicted_papers_future&#39;. Time since pickling  3:55:07.239984
 </pre>
 </div>
 </div>
@@ -14240,7 +14340,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-small-multiples-num-papers-future">Figure 10</a>: Articles by year of observation, extrapolated into the future.</strong>   Each row is an OA Type, each column is a Year of Observation, the x-axis of each graph is the Year of Publication, and the y-axis is the total number of articles (millions) available at the year of observation.</p>
+<p><strong>{{print figure_link("small-multiples-num-papers-future")}}: Articles by year of observation, extrapolated into the future.</strong>   Each row is an OA Type, each column is a Year of Observation, the x-axis of each graph is the Year of Publication, and the y-axis is the total number of articles (millions) available at the year of observation.</p>
 
 </div>
 </div>
@@ -14248,14 +14348,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.2.8-OA-by-date-of-observation">4.2.8 OA by date of observation<a class="anchor-link" href="#4.2.8-OA-by-date-of-observation">&#182;</a></h4>
+<h4 id="4.2.1-OA-by-date-of-observation">4.2.1 OA by date of observation<a class="anchor-link" href="#4.2.1-OA-by-date-of-observation">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can graph the total number of OA articles by year of observation by taking the area under the histograms above -- calculating <em>all</em> articles available by OA type on the date of publication, independently of publication year.  We show this in <a href="#figure-articles_by_observation_year_prediction">Figure 11</a>.</p>
+<p>We can graph the total number of OA articles by year of observation by taking the area under the histograms above -- calculating <em>all</em> articles available by OA type on the date of publication, independently of publication year.  We show this in {{print figure_link("articles_by_observation_year_prediction")}}.</p>
 
 </div>
 </div>
@@ -14309,7 +14409,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-articles_by_observation_year_prediction">Figure 11</a>: Total articles by OA type, by year of observation.</strong> OA type as of year of observation.</p>
+<p><strong>{{print figure_link("articles_by_observation_year_prediction")}}: Total articles by OA type, by year of observation.</strong> OA type as of year of observation.</p>
 
 </div>
 </div>
@@ -14384,8 +14484,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The shape of <a href="#figure-articles_by_observation_year_prediction">Figure 11</a> is very similar to the years 2000-2018 of <a href="#figure-articles_by_simple_colors_cumulative">Figure 31</a>, the cumulative graph of papers by publication date, by OA type.</p>
-<p>If we plot the difference between observation years in <a href="#figure-articles_by_observation_year_prediction">Figure 11</a>, we get the <em>net change</em> in articles by OA type, by year of observation.  This net change is shown in <a href="#figure-articles_by_observation_year_prediction_diff">Figure 12</a>.  It looks quite similar to <a href="#figure-articles_by_simple_colors">Figure 30</a> between the years 2000 and 2018.</p>
+<p>The shape of {{print figure_link("articles_by_observation_year_prediction")}} is very similar to the years 2000-2018 of {{print figure_link("articles_by_simple_colors_cumulative")}}, the cumulative graph of papers by publication date, by OA type.</p>
+<p>If we plot the difference between observation years in {{print figure_link("articles_by_observation_year_prediction")}}, we get the <em>net change</em> in articles by OA type, by year of observation.  This net change is shown in {{print figure_link("articles_by_observation_year_prediction_diff")}}.  It looks quite similar to {{print figure_link("articles_by_simple_colors")}} between the years 2000 and 2018.</p>
 
 </div>
 </div>
@@ -14439,7 +14539,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-articles_by_observation_year_prediction_diff">Figure 12</a>: Change in number of articles from previous year of observation, by OA type.</strong> Includes newly published articles, as well as articles that have changed OA type.</p>
+<p><strong>{{print figure_link("articles_by_observation_year_prediction_diff")}}: Change in number of articles from previous year of observation, by OA type.</strong> Includes newly published articles, as well as articles that have changed OA type.</p>
 
 </div>
 </div>
@@ -14450,7 +14550,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.3-Predicting-articles-views-by-OA-availability">4.3 Predicting articles views by OA availability<a class="anchor-link" href="#4.3-Predicting-articles-views-by-OA-availability">&#182;</a></h3>
+<p><a id="section-4-3"></a></p>
+<h3 id="4.3-Past-and-Future-OA-Views">4.3 Past and Future OA Views<a class="anchor-link" href="#4.3-Past-and-Future-OA-Views">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14459,6 +14560,13 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have an analysis of OA based on time of observation, rather than simply time of publication, we can extend our examination to include OA as a percentage of article <em>views</em>, rather than just number of articles.</p>
 <p>To do this, we will examine data from the Unpaywall browser extension, as described in <a href="#section-2-2">Section 2.2</a> above. This data allows us to make inferences about overall readership trends--which in turn will help us make predictions about how OA will impact global readers of the research literature.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can start by describing this approach generally with the following</p>
 <hr>
 
@@ -14470,6 +14578,13 @@ div#notebook {
 
      (the average number of times someone views a paper, given its age and OA type)</code></pre>
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can state this more concisely and precisely as follows:</p>
 
 <pre><code> estimated views = convolution(articles by age curve, views per article by age curve)</code></pre>
@@ -14522,7 +14637,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is well known that readers are more interested in accessing newly-published articles, and indeed this trend can be seen in the Unpaywall usage logs. <a href="#figure-view-by-age-no-color">Figure 13</a> below summarizes access requests by users of the Unpaywall extension between August 2018 and August 2019, by age of the article they wished to read, to show the shape of the graph. As expected, readers are most interested in articles published less than a year ago.</p>
+<p>It is well known that readers are more interested in accessing newly-published articles, and indeed this trend can be seen in the Unpaywall usage logs. {{ print figure_link("view-by-age-no-color") }} below summarizes access requests by users of the Unpaywall extension between August 2018 and August 2019, by age of the article they wished to read, to show the shape of the graph. As expected, readers are most interested in articles published less than a year ago.</p>
 
 </div>
 </div>
@@ -14555,7 +14670,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-view-by-age-no-color">Figure 13</a>: Views by article age</strong></p>
+<p><strong>{{print figure_link("view-by-age-no-color")}}: Views by article age</strong></p>
 
 </div>
 </div>
@@ -14610,7 +14725,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First, we use the access data we have from one specific month:  July 2019, which accounts for 2,774,403 views.</p>
+<p>First, we use the access data we have from one specific month:  July 2019, which accounts for {{ print "{0:,.0f}".format(views_per_year_total.num_views_one_month.sum()) }} views.</p>
 
 </div>
 </div>
@@ -14618,7 +14733,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We group it by OA access type and plot it by age of the article in <a href="#figure-views_by_age_with_color">Figure 14</a>.</p>
+<p>We group it by OA access type and plot it by age of the article in {{ print figure_link("views_by_age_with_color") }}.</p>
 
 </div>
 </div>
@@ -14635,7 +14750,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;views_per_year_total&#39;. Time since pickling  2:15:32.408064
+<pre>loading cached value for variable &#39;views_per_year_total&#39;. Time since pickling  3:55:03.999702
 </pre>
 </div>
 </div>
@@ -14662,7 +14777,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views_by_age_with_color">Figure 14</a>: Views by article age, by OA type</strong></p>
+<p><strong>{{print figure_link("views_by_age_with_color")}}: Views by article age, by OA type</strong></p>
 
 </div>
 </div>
@@ -14681,6 +14796,13 @@ div#notebook {
 
         (the number of papers of that age and OA type)</code></pre>
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can state this more concisely and precisely as follows:</p>
 
 <pre><code>views per article by age curve = dot_division(views by age curve, articles by age curve)</code></pre>
@@ -14723,7 +14845,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For article age curves, we use the curves we calculated in <a href="#section-4-2-7">Section 4.2.7</a> above, specifically <a href="#figure-small-multiples-num-papers-future">Figure 10</a>.</p>
+<p>For article age curves, we use the curves we calculated in <a href="#section-4-2-7">Section 4.2.7</a> above, specifically {{print figure_link("small-multiples-num-papers-future")}}.</p>
 
 </div>
 </div>
@@ -14740,7 +14862,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;papers_by_availability_year_total_2018&#39;. Time since pickling  2:15:20.014416
+<pre>loading cached value for variable &#39;papers_by_availability_year_total_2018&#39;. Time since pickling  3:54:52.847827
 </pre>
 </div>
 </div>
@@ -14767,7 +14889,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-num-papers-by-age-2018">Figure 15</a>: Articles by article age</strong></p>
+<p><strong>{{print figure_link("num-papers-by-age-2018")}}: Articles by article age</strong></p>
 
 </div>
 </div>
@@ -14827,7 +14949,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;views_per_article_total&#39;. Time since pickling  2:15:19.321636
+<pre>loading cached value for variable &#39;views_per_article_total&#39;. Time since pickling  3:54:48.688270
 </pre>
 </div>
 </div>
@@ -14854,7 +14976,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views-by-article">Figure 16</a>: Views by article curve, by OA type</strong></p>
+<p><strong>{{print figure_link("views-by-article")}}: Views by article curve, by OA type</strong></p>
 
 </div>
 </div>
@@ -14936,7 +15058,7 @@ We then did this for all years.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;predicted_views_total&#39;. Time since pickling  2:14:52.038374
+<pre>loading cached value for variable &#39;predicted_views_total&#39;. Time since pickling  3:54:21.447762
 </pre>
 </div>
 </div>
@@ -14963,7 +15085,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views-small">Figure 17</a>: Views</strong> Views by observation year.</p>
+<p><strong>{{print figure_link("views-small")}}: Views</strong> Views by observation year.</p>
 
 </div>
 </div>
@@ -15035,7 +15157,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views-large">Figure 18</a>: Views by year of view</strong></p>
+<p><strong>{{print figure_link("views-large")}}: Views by year of view</strong></p>
 
 </div>
 </div>
@@ -15107,7 +15229,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views_stacked">Figure 19</a>: Views, by year of view</strong></p>
+<p><strong>{{print figure_link("views_stacked")}}: Views, by year of view</strong></p>
 
 </div>
 </div>
@@ -15190,6 +15312,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="section-4-4"></a></p>
 <h3 id="4.4-Extending-the-model:--Growth-of-bioRxiv">4.4 Extending the model:  Growth of bioRxiv<a class="anchor-link" href="#4.4-Extending-the-model:--Growth-of-bioRxiv">&#182;</a></h3>
 </div>
 </div>
@@ -15198,7 +15321,14 @@ We then did this for all years.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>An advantage of building a model like we have above, is that we can now layer on alternate assumptions and see how anticipated disruptions might affect OA in coming years. A comprehensive examination of all the alternative futures is of outside the scope of this paper, however an example will be illustrative.</p>
-<p>bioRxiv, a preprint server in biology, provides an excellent example.  As described in Abdill and Blekhman (2019), deposits into bioRxiv are growing rapidly. If growth continues at the current rate, biorxiv could prove to be a major disruptor. It has the potential to have a large effect on growth of OA and the usage of OA particularly because the vast majority of the deposits are made OA at or before the time of article publication (and so are available during the most demanded time of usage).</p>
+<p>BioRxiv, a preprint server in biology, provides an excellent example.  As described in Abdill and Blekhman (2019), deposits into bioRxiv are growing rapidly. If growth continues at the current rate, biorxiv could prove to be a major disruptor. It has the potential to have a large effect on growth of OA and the usage of OA particularly because the vast majority of the deposits are made OA at or before the time of article publication (and so are available during the most demanded time of usage).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We model the growth of bioRxiv and its impact on OA availability here by extrapolating from bioRxiv papers that:</p>
 <ul>
 <li>were deposited before they were published (to simplify the model), and</li>
@@ -15350,7 +15480,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-biorxiv-exp">Figure 20</a>: bioRxiv extrapolation</strong></p>
+<p><strong>{{print figure_link("biorxiv-exp")}}: bioRxiv extrapolation</strong></p>
 
 </div>
 </div>
@@ -15389,7 +15519,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>bioRxiv won't be able to grow exponentially forever -- there are a limited number of papers in Biology.  But if we were to imagine bioRxiv continued its current growth rate for another 5 years, it would affect the overall number of papers as seen in <a href="#figure-articles_by_observation_year_prediction_plus_biorxiv">Figure 21</a>.</p>
+<p>bioRxiv won't be able to grow exponentially forever -- there are a limited number of papers in Biology.  But if we were to imagine bioRxiv continued its current growth rate for another 5 years, it would affect the relative proportion of articles available as OA as shown in <a href="#figure-articles_by_observation_year_prediction_plus_biorxiv">Figure 21</a>.</p>
 
 </div>
 </div>
@@ -15422,7 +15552,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-articles_by_observation_year_prediction_plus_biorxiv">Figure 21</a>: Prediction of articles by OA type by year of observation, including bioRxiv</strong></p>
+<p><strong>{{print figure_link("articles_by_observation_year_prediction_plus_biorxiv")}}: Prediction of articles by OA type by year of observation, including bioRxiv</strong></p>
 
 </div>
 </div>
@@ -15461,7 +15591,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This doesn't look like many articles, but let's see how it affects viwership.  For simplicity we use the generic green OA access trend derived in <a href="#section-4-4-1">Section 4.3.1</a> and <a href="#figure-views-by-article">Figure 16</a>.  This results in views as shown in <a href="#figure-biorxiv-stacked">Figure 22</a> -- a small but notable impact on the total views of all scholarly papers, and obviously the impact would be even greater within the field of biology.</p>
+<p>This doesn't look like many articles, but let's see how it affects viwership.  For simplicity we use the generic green OA access trend derived in <a href="#section-4-4-1">Section 4.3.1</a> and {{print figure_link("views-by-article") }}.  This results in views as shown in {{print figure_link("biorxiv-stacked") }} -- a small but notable impact on the total views of all scholarly papers, and obviously the impact would be even greater within the field of biology.</p>
 
 </div>
 </div>
@@ -15497,7 +15627,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-biorxiv-stacked">Figure 22</a>: Predicted views, including bioRxiv, by year of view</strong></p>
+<p><strong>{{print figure_link("biorxiv-stacked")}}: Predicted views, including bioRxiv, by year of view</strong></p>
 
 </div>
 </div>
@@ -15588,6 +15718,13 @@ We then did this for all years.</p>
 <p>Understanding the growth of open access (OA) is important for deciding funder policy, subscription allocation, and infrastructure planning.</p>
 <p>This study analyses the number of papers available as OA over time. The models includes both OA embargo data and the relative growth rates of different OA types over time, based on the OA status of 70 million journal articles published between 1950 and 2019.</p>
 <p>The study also looks at article usage data, analyzing the proportion of views to OA articles vs views to articles which are closed access.  Signal processing techniques are used to model how these viewership patterns change over time.  Viewership data is based on 2.8 million uses of the Unpaywall browser extension in July 2019.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We found that Green, Gold, and Hybrid papers receive more views than their Closed or Bronze counterparts, particularly Green papers made available within a year of publication.  We also found that the proportion of Green, Gold, and Hybrid articles is growing most quickly.</p>
 <p>In 2019:</p>
 <ul>
@@ -15816,9 +15953,30 @@ We then did this for all years.</p>
 <li>44% of all journal articles will be available as OA</li>
 <li>70% of article views will be to OA articles</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Our model is conservative.  Although the extrapolations assume continued incremental adoption of OA, they do not yet model other disruptive changes that will likely increase the growth of OA in coming years: the adoption of Plan S, a change in embargo periods for existing mandates, a dramatic increase in institutional self-archiving, large scale read and publish agreements, etc.</p>
-<p>This area is ripe for future research in other ways as well: understanding how OA rates vary by discipline, country, and publisher is key.  The model could be refined in many ways, for example to use custom viewership patterns for readers within a specific university, or of a specific journal.</p>
-<p>The study has several limitations.  Only journal articles with DOIs are included, which under-represents disciplines and geographical areas which rely heavily on conference papers or articles without DOIs.  Illegal repositories (SciHub) or articles posted on academic social networks (ResearchGate and Academia.edu) are not considered, which may undercount articles that relevant for some uses.  The users of the Unpaywall browser extension may not be representative of other readers, and using page views as a proxy for article interest is inexact.  Nonetheless, we believe this analysis represents a useful approach for modeling the growth and importance of OA in the future.</p>
+<p>This area is ripe for future research in other ways as well: understanding how OA publication and viewership rates vary by discipline, country, and publisher is key.  The model could be refined in many ways, for example to use custom viewership patterns for readers within a specific university, or of a specific journal.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The study has several limitations.  Only journal articles with DOIs are included, which under-represents disciplines and geographical areas which rely heavily on conference papers or articles without DOIs.  Illegal repositories (SciHub) or articles posted on academic social networks (ResearchGate and Academia.edu) are not considered, which may undercount articles that are relevant for some uses.  The users of the Unpaywall browser extension may not be representative of other readers, and using page views as a proxy for article interest is inexact.  Nonetheless, we believe this analysis represents a useful approach for modeling the growth and importance of OA in the future.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The genesis for this study was a steady stream of inquiries from university librarians, asking for OA rates for specific journals to help inform their subscription decisions and negotiations.  We realized it would be even more helpful if we could provide OA rates (a) for the future, (b) by date when the OA resource is available, and (c) weighted by the importance of the article to their faculty.  The model presented here addresses these issues, and will form the basis of information available to librarians and other decision-makers in the future.</p>
 <p>The declining relevance of closed access articles is likely to change the landscape of scholarly communication in the years to come.</p>
 
@@ -15948,6 +16106,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="section-11-1"></a></p>
 <h3 id="11.1-Detailed-look-at-OA-Lag-of-Green-OA">11.1 Detailed look at OA Lag of Green OA<a class="anchor-link" href="#11.1-Detailed-look-at-OA-Lag-of-Green-OA">&#182;</a></h3>
 </div>
 </div>
@@ -16051,7 +16210,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-detailed-green">Figure 23</a>: Detailed Green OA</strong></p>
+<p><strong>{{print figure_link("detailed-green")}}: Detailed Green OA</strong></p>
 
 </div>
 </div>
@@ -16105,7 +16264,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-zoom-in-green">Figure 24</a>: Zoom in green</strong></p>
+<p><strong>{{print figure_link("zoom-in-green")}}: Zoom in green</strong></p>
 
 </div>
 </div>
@@ -16113,6 +16272,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="section-11-2"></a></p>
 <h3 id="11.2-Detailed-look-at-OA-Lag-of-Bronze-OA">11.2 Detailed look at OA Lag of Bronze OA<a class="anchor-link" href="#11.2-Detailed-look-at-OA-Lag-of-Bronze-OA">&#182;</a></h3>
 </div>
 </div>
@@ -16206,7 +16366,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-detailed-bronze">Figure 25</a>: Detailed Bronze Delayed OA</strong></p>
+<p><strong>{{print figure_link("detailed-bronze")}}: Detailed Bronze Delayed OA</strong></p>
 
 </div>
 </div>
@@ -16260,7 +16420,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-zoom-in-bronze">Figure 26</a>: Zoom in bronze</strong></p>
+<p><strong>{{print figure_link("zoom-in-bronze")}}: Zoom in bronze</strong></p>
 
 </div>
 </div>
@@ -16268,6 +16428,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="section-11-3"></a></p>
 <h3 id="11.3-Walk-through-of-convolution">11.3 Walk-through of convolution<a class="anchor-link" href="#11.3-Walk-through-of-convolution">&#182;</a></h3>
 </div>
 </div>
@@ -16323,7 +16484,7 @@ We then did this for all years.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;papers_by_availability_year_total_2022&#39;. Time since pickling  2:14:32.624696
+<pre>loading cached value for variable &#39;papers_by_availability_year_total_2022&#39;. Time since pickling  3:54:01.582370
 </pre>
 </div>
 </div>
@@ -16350,7 +16511,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-num-articles-2022">Figure 27</a>: Papers by year of publication, exponential extrapolation</strong></p>
+<p><strong>{{print figure_link("num-articles-2022")}}: Papers by year of publication, exponential extrapolation</strong></p>
 
 </div>
 </div>
@@ -16406,7 +16567,7 @@ We then did this for all years.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;views_per_article_total&#39;. Time since pickling  2:16:13.428592
+<pre>loading cached value for variable &#39;views_per_article_total&#39;. Time since pickling  3:55:42.254596
 </pre>
 </div>
 </div>
@@ -16433,7 +16594,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views-per-article2">Figure 28</a>: Papers by year of publication, exponential extrapolation</strong></p>
+<p><strong>{{print figure_link("views-per-article2")}}: Papers by year of publication, exponential extrapolation</strong></p>
 
 </div>
 </div>
@@ -16489,7 +16650,7 @@ We then did this for all years.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loading cached value for variable &#39;predicted_views_by_pubdate_total&#39;. Time since pickling  2:14:13.773244
+<pre>loading cached value for variable &#39;predicted_views_by_pubdate_total&#39;. Time since pickling  3:53:42.557355
 </pre>
 </div>
 </div>
@@ -16516,7 +16677,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-views-by-article-year-2022">Figure 29</a>: Papers by year of publication, exponential extrapolation</strong></p>
+<p><strong>{{print figure_link("views-by-article-year-2022")}}: Papers by year of publication, exponential extrapolation</strong></p>
 
 </div>
 </div>
@@ -16574,7 +16735,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The number and proportion of articles by OA type, by publication year, is shown in <a href="#figure-articles_by_simple_colors">Figure 30</a>.</p>
+<p>The number and proportion of articles by OA type, by publication year, is shown in {{ print figure_link("articles_by_simple_colors") }}.</p>
 
 </div>
 </div>
@@ -16607,7 +16768,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-articles_by_simple_colors">Figure 30</a>: Articles by OA type, by year of publication. OA type as of October 2019.</strong></p>
+<p><strong>{{print figure_link("articles_by_simple_colors")}}: Articles by OA type, by year of publication. OA type as of October 2019.</strong></p>
 
 </div>
 </div>
@@ -16615,7 +16776,14 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The early years of <a href="#figure-articles_by_simple_colors">Figure 30</a> is similar to Figure 2 in Piwowar et al. (2018), with one notable difference: some of what was considered Bronze OA (and to a lesser extent hybrid OA) in Piwowar et al. (2018) is classified as Gold OA in the current analysis. This is due to an improvement in Unpaywall's algorithms. Originally, Unpaywall used the Directory of Open Access Journals (DOAJ) as the sole arbiter of whether a journal was "fully-OA." Unpaywall still uses DOAJ in this way, but it now also adds an empirical check for OA journals (if 100% of a journal's articles are OA, it is listed as an OA journal). This results in a more comprehensive and accurate list of fully-OA journals, which in turn moves some articles into Gold from Hybrid and Bronze. We've made this comprehensive Gold OA journal list available: see <a href="#section-7-1">Section 7.1</a>.</p>
+<p>The early years of {{ print figure_link("articles_by_simple_colors") }} is similar to Figure 2 in Piwowar et al. (2018), with one notable difference: some of what was considered Bronze OA (and to a lesser extent hybrid OA) in Piwowar et al. (2018) is classified as Gold OA in the current analysis. This is due to an improvement in Unpaywall's algorithms. Originally, Unpaywall used the Directory of Open Access Journals (DOAJ) as the sole arbiter of whether a journal was "fully-OA." Unpaywall still uses DOAJ in this way, but it now also adds an empirical check for OA journals (if 100% of a journal's articles are OA, it is listed as an OA journal). This results in a more comprehensive and accurate list of fully-OA journals, which in turn moves some articles into Gold from Hybrid and Bronze. We've made this comprehensive Gold OA journal list available: see <a href="#section-7-1">Section 7.1</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can see a visible decrease in the proportion of OA (particularly Green) in the most recent publication years.  <strong>This change in OA proportions is because many articles pubished in 2018 are still under embargo at the time of this analysis (October 2019), so they are considered "Closed" in this graph even though they may ultimately become Green OA or Bronze OA.</strong>  More on this in <a href="#section-4-2">Section 4.2</a>.</p>
 
 </div>
@@ -16655,7 +16823,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A cumulative view of <a href="#figure-articles_by_simple_colors">Figure 30</a> is shown in <a href="#figure-articles_by_simple_colors_cumulative">Figure 31</a>.</p>
+<p>A cumulative view of {{ print figure_link("articles_by_simple_colors") }} is shown in {{ print figure_link("articles_by_simple_colors_cumulative") }}.</p>
 
 </div>
 </div>
@@ -16688,7 +16856,7 @@ We then did this for all years.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="#figure-articles_by_simple_colors_cumulative">Figure 31</a>: Cumulative articles (total articles extant in the world) by OA type, by year of publication. OA type as of October 2019.</strong></p>
+<p><strong>{{print figure_link("articles_by_simple_colors_cumulative")}}: Cumulative articles (total articles extant in the world) by OA type, by year of publication. OA type as of October 2019.</strong></p>
 
 </div>
 </div>

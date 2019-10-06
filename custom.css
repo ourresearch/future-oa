@@ -1,0 +1,14 @@
+#notebook-container {
+    /* padding: 88px; */
+    padding-right: 5%;
+    width: 63%;
+    background-color: #fff;
+    min-height: 0;
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
+    box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
+}
+
+div#notebook {
+    font-size: 20px;
+    line-height: 1.4;
+}
