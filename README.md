@@ -16,6 +16,6 @@ For others new to jupyter, and to help me remember:  do this to export the noteb
 <a href="https://htmlpreview.github.io/?https://github.com/Impactstory/future-oa/blob/master/manuscript.html">https://htmlpreview.github.io/?https://github.com/Impactstory/future-oa/blob/master/manuscript.html</a></p>
 
 The actual submitted version had a few final tweeks in [Google Docs here](https://docs.google.com/document/d/1NtGVKTQU7i6WGDIEtOGdrYgAxyhc7l51dBMUnn_CDpg/edit#) and 
-then were exported to the gdoc_git export directory, and finally saved as a pdf.
+then were exported to the gdoc_git export directory, and finally saved as a pdf.  Images are all in https://github.com/Impactstory/future-oa/tree/master/gdoc_export/images if you are looking for them (numbers not related to Figure numbers in text alas).
 
 
