@@ -1,0 +1,3 @@
+- fix typo "browser automatically extension detects"
+- add to limitations
+    - using green OAI-PMH record is not a fully accurate way to determine when something has become OA
