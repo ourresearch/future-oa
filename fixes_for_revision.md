@@ -1,3 +1,4 @@
 - fix typo "browser automatically extension detects"
 - add to limitations
     - using green OAI-PMH record is not a fully accurate way to determine when something has become OA
+    - delayed bronze OA approach is rough, and not well suited to measure the adoption of new delayed OA policies but rather just the growth of publication rates in currently bronze OA journals.  Dates when journal adopted bronze OA policies should be taken into account in future work.
